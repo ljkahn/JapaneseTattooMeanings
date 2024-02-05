@@ -5,31 +5,45 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './pages/HomeScreen';
-import CategorySelector from './components/CategorySelector'
+import CategoryScreen from './components/CategorySelector';
 
 const Stack =  createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <Stack.Navigator initialRouteName= "HomeScreen">
+                <Stack.Screen
         name='Home'
         component={HomeScreen}
         options={{ title: 'Welcome to Home Screen' }}
-        />
-        <Stack.Screen name="Categories" component={CategorySelector}
-    <View style={styles.container}>
+/>
+        <Stack.Screen
+        name='Categories'
+        component={CategoryScreen}
+        options={{ title: 'Categories' }}
+/>
+
+
+    </Stack.Navigator>
+        <View style={styles.container}>
       <Text style={{ color: "#fff"}}>Japanese Tattooing App</Text>
-<Image 
+{/* <Image 
   source={require ("./assets/deities/Benzaiten.jpeg")} 
   style={{ width: 200, height: 200 }}
   resizeMode="contain"
 />
+
+<Image 
+  source={require ("./assets/deities/Benzaiten.jpeg")} 
+  style={{ width: 200, height: 200 }}
+  resizeMode="contain"
+/> */}
       
       <StatusBar style="auto" />
     </View>
-    </Stack.Navigator>
+    
     </NavigationContainer>
+    
 
   );
 }
