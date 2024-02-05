@@ -1,7 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const CategorySelector = () => {
+const CategorySelector = (route) => {
+  const {category} = route.params;
   return (
     <View>
       <Text>CategorySelector</Text>
