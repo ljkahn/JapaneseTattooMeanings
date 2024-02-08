@@ -1,50 +1,50 @@
-import * as React from 'react'
+import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-// import {  NativeBaseProvider } from "native-base";
-import {NavigationContainer} from '@react-navigation/native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native'; // Import useNavigation
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './pages/HomeScreen';
-import CategoryScreen from './components/CategorySelector';
 
-const Stack =  createNativeStackNavigator();
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function HomeScreen() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName= "HomeScreen">
-                <Stack.Screen
-        name='Home'
-        component={HomeScreen}
-        options={{ title: 'Welcome to Home Screen' }}
-/>
-        <Stack.Screen
-        name='Categories'
-        component={CategoryScreen}
-        options={{ title: 'Categories' }}
-/>
+    <View style={styles.container}>
+      <Text style={{ color: "#fff" }}>Welcome to the Japanese Tattooing App</Text>
+      <Text style={{ color: "#fff" }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
 
+      <TouchableOpacity onPress={() => navigate('DetailScreen')}> {/* Wrap Image with TouchableOpacity */}
+        <Image
+          source={require("./assets/deities/Benzaiten.jpeg")}
+          style={{ width: 200, height: 200 }}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
 
-    </Stack.Navigator>
-        <View style={styles.container}>
-      <Text style={{ color: "#fff"}}>Japanese Tattooing App</Text>
-{/* <Image 
-  source={require ("./assets/deities/Benzaiten.jpeg")} 
-  style={{ width: 200, height: 200 }}
-  resizeMode="contain"
-/>
+      <Text style={{ color: "#fff" }}>History</Text>
 
-<Image 
-  source={require ("./assets/deities/Benzaiten.jpeg")} 
-  style={{ width: 200, height: 200 }}
-  resizeMode="contain"
-/> */}
+      <TouchableOpacity onPress={() => navigate('DetailScreen')}> {/* Wrap Image with TouchableOpacity */}
+        <Image
+          source={require("./assets/deities/Benzaiten.jpeg")}
+          style={{ width: 200, height: 200 }}
+          resizeMode="contain"
+        />
+      </TouchableOpacity>
+
+      <Text style={{ color: "#fff" }}>Categories</Text>
       
       <StatusBar style="auto" />
     </View>
-    
-    </NavigationContainer>
-    
+  );
+}
 
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        {/* Add other screens here */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#23231c',
     alignItems: 'center',
     justifyContent: 'center',
-
     color: "#fff"
   },
 });
