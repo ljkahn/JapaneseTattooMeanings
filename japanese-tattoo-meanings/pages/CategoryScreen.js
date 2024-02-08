@@ -1,26 +1,46 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import ImageData from "../data/imageData"
 
-const CategoryScreen = ({ navigation }) => {
-  // Function to navigate to ImageDetail screen with selected image data
-  const handleImagePress = (imageData) => {
-    navigation.navigate("ImageDetail", { imageData });
-  };
+import React from 'react';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
+function CategoryScreen() {
   return (
-    <View>
-      {imageData.map((image) => (
-        <TouchableOpacity
-          key={image.id}
-          onPress={() => handleImagePress(image)}
-        >
-          <Image source={image.imageUri} />
-          <Text>{image.description}</Text>
-        </TouchableOpacity>
-      ))}
+    <View style={styles.container}>
+              <Image
+          source={require("../assets/deities/sevenLuckyGods.jpeg")}
+          style={{ width: 200, height: 200 }}
+          resizeMode="contain"
+        />
+      <Text>
+        Deities
+      </Text>
+
+            <Text>
+        Fauna
+      </Text>
+            <Text>
+        Flora
+      </Text>
+            <Text>
+        Folklore
+      </Text>
+            <Text>
+        Suikoden
+      </Text>
+            <Text>
+        Supernatural
+      </Text>
+      <Image></Image>
     </View>
   );
-};
+}
 
 export default CategoryScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: "#fff"
+  },
+});
