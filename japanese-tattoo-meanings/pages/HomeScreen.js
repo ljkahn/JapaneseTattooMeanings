@@ -7,7 +7,7 @@ function HomeScreen({ handleHistoryPress, handleCategoriesPress }) {
       <Text style={{ color: "#fff" }}>Welcome to the Japanese Tattooing App</Text>
       <Text style={{ color: "#fff" }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
 
-      <TouchableOpacity onPress={handleHistoryPress}>
+      {/* <TouchableOpacity onPress={handleHistoryPress}>
         <Image
           source={require("../assets/deities/Benzaiten.jpeg")}
           style={{ width: 200, height: 200 }}
@@ -25,7 +25,7 @@ function HomeScreen({ handleHistoryPress, handleCategoriesPress }) {
         />
       </TouchableOpacity>
 
-      <Text style={{ color: "#fff" }}>Categories</Text>
+      <Text style={{ color: "#fff" }}>Categories</Text> */}
       
       <StatusBar style="auto" />
     </View>
