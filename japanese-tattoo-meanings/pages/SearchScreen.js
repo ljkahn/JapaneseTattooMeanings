@@ -1,12 +1,34 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { View, TextInput, StyleSheet } from 'react-native';
 
-const SearchScreen = () => {
+const SearchScreen = ({ closeModal }) => {
   return (
-    <View>
-      <Text>SearchScreen</Text>
+    <View style={styles.container}>
+      <TextInput
+        placeholder="Search..."
+        style={styles.input}
+        autoFocus={true}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default SearchScreen
+const styles = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#23231c',
+  },
+  input: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    width: '80%',
+    color: '#fff',
+  },
+});
+
+export default SearchScreen;
