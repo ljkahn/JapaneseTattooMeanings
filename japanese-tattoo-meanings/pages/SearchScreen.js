@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 
+//autofill 
+//display pages re: each search category 
 const SearchScreen = ({ closeModal }) => {
   return (
     <View style={styles.container}>
