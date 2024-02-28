@@ -1,11 +1,11 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView, Image } from 'react-native'
 import React from 'react'
 
 const deitiesData = [    
 {
     id: 1,
     category: "Deities",
-    imageUri: require("./assets/deities/Benzaiten.jpeg"),
+    imageUri: require("../assets/deities/Benzaiten.jpeg"),
     title: "Benzaiten",
     artist: "Aoigaoka Keisei",
     tattooBackgrounds: "Clouds, Water",
@@ -14,7 +14,7 @@ const deitiesData = [
   {
     id: 2,
     category: "Deities",
-    imageUri: require("./assets/deities/Bishamonten.jpeg"),
+    imageUri: require("../assets/deities/Bishamonten.jpeg"),
     title: "Bishamonten",
     artist: "Unknown",
     tattooBackgrounds: "Clouds, Stone",
@@ -24,7 +24,7 @@ const deitiesData = [
     {
     id: 3,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Daiitoku Myo-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -33,7 +33,7 @@ const deitiesData = [
     {
     id: 4,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Daikokuten",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -42,7 +42,7 @@ const deitiesData = [
     {
     id: 5,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dainichi Nyorai",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -51,7 +51,7 @@ const deitiesData = [
     {
     id: 6,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dakiniten",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -60,7 +60,7 @@ const deitiesData = [
     {
     id: 7,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ebisu",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -69,7 +69,7 @@ const deitiesData = [
     {
     id: 8,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Enma",
     artist: "",
     tattooBackgrounds: "Clouds, Fire, Stone",
@@ -78,7 +78,7 @@ const deitiesData = [
     {
     id: 9,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Fudō Myo-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -87,7 +87,7 @@ const deitiesData = [
     {
     id: 10,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Fūjin and Raijin",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Water",
@@ -96,7 +96,7 @@ const deitiesData = [
     {
     id: 11,
     category: "Deities",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Hotei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -105,7 +105,7 @@ const deitiesData = [
   {
     id: 12,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kannon",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -114,7 +114,7 @@ const deitiesData = [
     {
     id: 13,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ni-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -123,7 +123,7 @@ const deitiesData = [
     {
     id: 14,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Seven Lucky Gods",
     artist: "",
     tattooBackgrounds: "Clouds, Water, Stone",
@@ -132,7 +132,7 @@ const deitiesData = [
     {
     id: 15,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Susanō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -141,7 +141,7 @@ const deitiesData = [
     {
     id: 16,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tennyo",
     artist: "",
     tattooBackgrounds: "Clouds, Water, Stone",
@@ -150,7 +150,7 @@ const deitiesData = [
     {
     id: 17,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Oanamuchi no Mikoto",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",

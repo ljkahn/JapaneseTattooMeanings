@@ -1,88 +1,34 @@
+// CategoryScreen.js
 import React from 'react';
 import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import DeitiesScreen from '../pages/Deities.js';
-import FaunaScreen from '../pages/Fauna.js';
-import FloraScreen from '../pages/Flora.js';
-import FolkloreScreen from '../pages/Folklore.js';
-import SuikodenScreen from '../pages/Suikoden.js';
-import SupernaturalScreen from '../pages/Supernatural.js';
 
 function CategoryScreen({ navigation }) {
-  // Function to navigate to a specific category page
-  
-  const navigateToCategory = (categoryScreen) => {
-     console.log(`Navigating to ${categoryScreen}`);
-    navigation.navigate(categoryScreen);
-  };
+  console.log(navigation)
+  const categories = [
+    { name: 'Deities', image: require("../assets/deities/sevenLuckyGods.jpeg"), screen: 'DeitiesScreen' },
+    { name: 'Fauna', image: require("../assets/fauna/kitsune.jpeg"), screen: 'FaunaScreen' },
+    { name: 'Flora', image: require("../assets/flora/peony.jpeg"), screen: 'FloraScreen' },
+    { name: 'Folklore', image: require("../assets/folklore/onibaba.jpeg"), screen: 'FolkloreScreen' },
+    { name: 'Supernatural', image: require("../assets/supernatural/baku.jpeg"), screen: 'SupernaturalScreen' },
+    { name: 'Suikoden', image: require("../assets/suikoden/senkaji.jpeg"), screen: 'SuikodenScreen' },
+    // Add other categories similarly
+  ];
 
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
-        <TouchableOpacity onPress={() => navigateToCategory('DeitiesScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/deities/sevenLuckyGods.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Deities</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToCategory('FaunaScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/fauna/kitsune.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Fauna</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToCategory('FloraScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/flora/peony.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Flora</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToCategory('FolkloreScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/folklore/onibaba.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Folklore</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToCategory('SuikodenScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/suikoden/senkaji.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Suikoden</Text>
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigateToCategory('SupernaturalScreen')}>
-          <View style={styles.category}>
-            <Image
-              source={require("../assets/supernatural/baku.jpeg")}
-              style={styles.image}
-              resizeMode="contain"
-            />
-            <Text style={styles.text}>Supernatural</Text>
-          </View>
-        </TouchableOpacity>
+        {categories.map((category, index) => (
+<TouchableOpacity key={index} onPress={() => {
+  console.log(`Navigating to ${category.screen}`);
+  navigation.navigate(category.screen);
+}}>
+  <TouchableOpacity onPress={() => alert('Image Clicked!')}></TouchableOpacity>
+            <View style={styles.category}>
+              <Image source={category.image} style={styles.image} resizeMode="contain" />
+              <Text style={styles.text}>{category.name}</Text>
+            </View>
+          </TouchableOpacity>
+        ))}
       </ScrollView>
     </View>
   );
