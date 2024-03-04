@@ -162,10 +162,11 @@ const supernaturalData = [
 const Supernatural = () => {
   return (
     <ScrollView>
-      {supernaturalData.map((fauna) => (
+      {supernaturalData.map((Supernatural) => (
         <View key={Supernatural.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={Supernatural.imageUri} style={{ width: 100, height: 100 }} />
           <Text style={{ fontWeight: 'bold' }}>{Supernatural.title}</Text>
+         
           <Text>Artist: {Supernatural.artist}</Text>
           <Text>Tattoo Backgrounds: {Supernatural.tattooBackgrounds}</Text>
           <Text>Pairings: {Supernatural.pairings}</Text>
