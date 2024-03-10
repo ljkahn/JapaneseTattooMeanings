@@ -2,7 +2,7 @@ const imageData = [
   {
     id: 1,
     category: "Deities",
-    imageUri: require("./assets/deities/Benzaiten.jpeg"),
+    imageUri: require("../assets/deities/Benzaiten.jpeg"),
     title: "Benzaiten",
     artist: "Aoigaoka Keisei",
     tattooBackgrounds: "Clouds, Water",
@@ -11,7 +11,7 @@ const imageData = [
   {
     id: 2,
     category: "Deities",
-    imageUri: require("./assets/deities/Bishamonten.jpeg"),
+    imageUri: require("../assets/deities/Bishamonten.jpeg"),
     title: "Bishamonten",
     artist: "Unknown",
     tattooBackgrounds: "Clouds, Stone",
@@ -21,7 +21,7 @@ const imageData = [
     {
     id: 3,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Daiitoku Myo-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -30,7 +30,7 @@ const imageData = [
     {
     id: 4,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Daikokuten",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -39,7 +39,7 @@ const imageData = [
     {
     id: 5,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dainichi Nyorai",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -48,7 +48,7 @@ const imageData = [
     {
     id: 6,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dakiniten",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -57,7 +57,7 @@ const imageData = [
     {
     id: 7,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ebisu",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -66,7 +66,7 @@ const imageData = [
     {
     id: 8,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Enma",
     artist: "",
     tattooBackgrounds: "Clouds, Fire, Stone",
@@ -75,7 +75,7 @@ const imageData = [
     {
     id: 9,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Fudō Myo-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -84,7 +84,7 @@ const imageData = [
     {
     id: 10,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Fūjin and Raijin",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Water",
@@ -93,7 +93,7 @@ const imageData = [
     {
     id: 11,
     category: "Deities",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Hotei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -102,7 +102,7 @@ const imageData = [
   {
     id: 12,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kannon",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -111,7 +111,7 @@ const imageData = [
     {
     id: 13,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ni-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -120,7 +120,7 @@ const imageData = [
     {
     id: 14,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Seven Lucky Gods",
     artist: "",
     tattooBackgrounds: "Clouds, Water, Stone",
@@ -129,7 +129,7 @@ const imageData = [
     {
     id: 15,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Susanō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -138,7 +138,7 @@ const imageData = [
     {
     id: 16,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tennyo",
     artist: "",
     tattooBackgrounds: "Clouds, Water, Stone",
@@ -147,7 +147,7 @@ const imageData = [
     {
     id: 17,
     category: "Deities",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Oanamuchi no Mikoto",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -156,25 +156,25 @@ const imageData = [
     {
     id: 18,
     category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Carp",
     artist: "",
     tattooBackgrounds: "Water",
     pairings: "Dragon (Ryū), Flowers, Goldfish (Kingyo)",
   },
-    {
-    id: 19,
-    category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
-    title: "",
-    artist: "",
-    tattooBackgrounds: "",
-    pairings: "",
-  },
+  //   {
+  //   id: 19,
+  //   category: "Fauna",
+  //   // imageUri: require("./assets/category1/image2.jpg"),
+  //   title: "",
+  //   artist: "",
+  //   tattooBackgrounds: "",
+  //   pairings: "",
+  // },
     {
     id: 20,
     category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Crane",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -183,7 +183,7 @@ const imageData = [
     {
     id: 21,
     category: "Fauna",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Fox",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -192,7 +192,7 @@ const imageData = [
   {
     id: 23,
     category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Goldfish",
     artist: "",
     tattooBackgrounds: "Water",
@@ -201,7 +201,7 @@ const imageData = [
     {
     id: 24,
     category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Hawk",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -210,7 +210,7 @@ const imageData = [
     {
     id: 25,
     category: "Fauna",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Snake",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -220,7 +220,7 @@ const imageData = [
     {
     id: 26,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tiger",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Stone, Water",
@@ -229,7 +229,7 @@ const imageData = [
     {
     id: 27,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Bamboo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -238,7 +238,7 @@ const imageData = [
     {
     id: 28,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Cherry Blossoms",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -248,7 +248,7 @@ const imageData = [
     {
     id: 29,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Chrysanthemum",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -258,7 +258,7 @@ const imageData = [
     {
     id: 30,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Lotus",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -267,7 +267,7 @@ const imageData = [
     {
     id: 31,
     category: "Flora",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Maple Leaves",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -277,7 +277,7 @@ const imageData = [
     {
     id: 32,
     category: "Flora",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Peach",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -286,7 +286,7 @@ const imageData = [
   {
     id: 33,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Peony",
     artist: "Yun Shouping",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -295,7 +295,7 @@ const imageData = [
     {
     id: 34,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Banzuiin Chōbei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -304,7 +304,7 @@ const imageData = [
     {
     id: 35,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Benkei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -313,7 +313,7 @@ const imageData = [
     {
     id: 36,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dakki no Ohyaku",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -322,7 +322,7 @@ const imageData = [
     {
     id: 37,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Daruma",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -331,7 +331,7 @@ const imageData = [
     {
     id: 38,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Firefighters",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -340,7 +340,7 @@ const imageData = [
     {
     id: 39,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Fujiwara no Hidesato",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -349,7 +349,7 @@ const imageData = [
     {
     id: 40,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Hakamadare and Kidōmaru",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -358,7 +358,7 @@ const imageData = [
     {
     id: 41,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Hanjō Danjō no Jō Arakage and the Giant Salamander",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -367,7 +367,7 @@ const imageData = [
     {
     id: 42,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Hannya",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -376,7 +376,7 @@ const imageData = [
   {
     id: 43,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Hayakawa Ayunosuke",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -385,7 +385,7 @@ const imageData = [
     {
     id: 44,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Higuchi Kanemitsue",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -394,7 +394,7 @@ const imageData = [
     {
     id: 45,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Iga Jutarō and Takiyasha-Hime",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -403,7 +403,7 @@ const imageData = [
     {
     id: 46,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "I No Hayata and the Nue",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening",
@@ -412,7 +412,7 @@ const imageData = [
     {
     id: 47,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ishikawa Goemon",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -421,7 +421,7 @@ const imageData = [
     {
     id: 48,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Jigoku Dayū",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -430,7 +430,7 @@ const imageData = [
     {
     id: 49,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Jiraiya and Tsunade",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -439,7 +439,7 @@ const imageData = [
     {
     id: 50,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kamigashi-hime",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -448,7 +448,7 @@ const imageData = [
     {
     id: 51,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kanu Unchō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -457,7 +457,7 @@ const imageData = [
     {
     id: 52,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Kazusa Hirotsune",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -466,7 +466,7 @@ const imageData = [
   {
     id: 53,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kintarō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -475,7 +475,7 @@ const imageData = [
     {
     id: 54,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kiyohime",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -484,7 +484,7 @@ const imageData = [
     {
     id: 55,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Minamoto no Tsunetomo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -493,7 +493,7 @@ const imageData = [
     {
     id: 56,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Minamoto no Yorimitsu",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -502,7 +502,7 @@ const imageData = [
     {
     id: 57,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Minamoto no Yoshitsune",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -511,7 +511,7 @@ const imageData = [
     {
     id: 58,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Miyamoto Musashi",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -520,7 +520,7 @@ const imageData = [
     {
     id: 59,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Momotarō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -529,7 +529,7 @@ const imageData = [
     {
     id: 60,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Mongaku",
     artist: "",
     tattooBackgrounds: "Water",
@@ -538,7 +538,7 @@ const imageData = [
     {
     id: 61,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Onibaba",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -547,7 +547,7 @@ const imageData = [
     {
     id: 62,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Oniwakamaru",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -556,7 +556,7 @@ const imageData = [
   {
     id: 63,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ryū-Ō Tarō",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -565,7 +565,7 @@ const imageData = [
     {
     id: 64,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Saginoike Heikurō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -574,7 +574,7 @@ const imageData = [
     {
     id: 65,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Satō Masakiyo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -583,7 +583,7 @@ const imageData = [
     {
     id: 66,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Shimose Kaga",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -592,7 +592,7 @@ const imageData = [
     {
     id: 67,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Shoki",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -601,7 +601,7 @@ const imageData = [
     {
     id: 68,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Son Goku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -610,7 +610,7 @@ const imageData = [
     {
     id: 69,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Taira no Tomomori",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -619,7 +619,7 @@ const imageData = [
     {
     id: 70,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tamatori-hime",
     artist: "",
     tattooBackgrounds: "Water",
@@ -628,7 +628,7 @@ const imageData = [
     {
     id: 71,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tenjik Tokubei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -637,7 +637,7 @@ const imageData = [
     {
     id: 72,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Toki Daishirō Motosada",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -646,7 +646,7 @@ const imageData = [
   {
     id: 73,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tomoe Gozen",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -655,7 +655,7 @@ const imageData = [
     {
     id: 74,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Waiso Saburō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -664,7 +664,7 @@ const imageData = [
       {
     id: 75,
     category: "Folklore/History",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Watanabe no Tsuna",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -674,7 +674,7 @@ const imageData = [
     {
     id: 76,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Gyōja Bushō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -683,7 +683,7 @@ const imageData = [
     {
     id: 77,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kanchi Kotsuritsu Shuki",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -692,7 +692,7 @@ const imageData = [
     {
     id: 78,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kaoshō Rochisin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -701,7 +701,7 @@ const imageData = [
     {
     id: 79,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Konkoryū Rishun",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -710,7 +710,7 @@ const imageData = [
     {
     id: 80,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ko Sanjō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -719,7 +719,7 @@ const imageData = [
     {
     id: 81,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kumonryū Shishin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -728,7 +728,7 @@ const imageData = [
     {
     id: 82,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Rori Hakuchō Chōjun",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -737,7 +737,7 @@ const imageData = [
     {
     id: 83,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Rōshi Ensei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -746,7 +746,7 @@ const imageData = [
   {
     id: 84,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Saienshi Chōsei",
     artist: "",
     tattooBackgrounds: "Clouds, stone, Water",
@@ -755,7 +755,7 @@ const imageData = [
     {
     id: 85,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Senkaji Chō-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -764,7 +764,7 @@ const imageData = [
     {
     id: 86,
     category: "Suikoden",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tanmei Jirō Gen Shōgo",
     artist: "",
     tattooBackgrounds: "Water",
@@ -773,7 +773,7 @@ const imageData = [
     {
     id: 87,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Baku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -782,7 +782,7 @@ const imageData = [
     {
     id: 88,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dragon",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -792,7 +792,7 @@ const imageData = [
     {
     id: 89,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Dragon and Tiger",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Stone, Water",
@@ -801,7 +801,7 @@ const imageData = [
     {
     id: 90,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Hakutaku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -810,7 +810,7 @@ const imageData = [
     {
     id: 91,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Kappa",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -819,7 +819,7 @@ const imageData = [
     {
     id: 92,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Karajishi",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -828,7 +828,7 @@ const imageData = [
     {
     id: 93,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image1.jpg"),
+    // imageUri: require("./assets/category1/image1.jpg"),
     title: "Kirin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -837,7 +837,7 @@ const imageData = [
   {
     id: 94,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Namakubi",
     artist: "",
     tattooBackgrounds: "Clouds, Stonem, Water",
@@ -846,7 +846,7 @@ const imageData = [
     {
     id: 95,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Nekomata",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -855,7 +855,7 @@ const imageData = [
     {
     id: 96,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Ōmukade",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -864,7 +864,7 @@ const imageData = [
     {
     id: 97,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Phoenix",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -873,7 +873,7 @@ const imageData = [
     {
     id: 98,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Rokuro Kubi",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -882,7 +882,7 @@ const imageData = [
     {
     id: 99,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Sōjōbō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -891,7 +891,7 @@ const imageData = [
     {
     id: 100,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Sumizome",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -900,7 +900,7 @@ const imageData = [
       {
     id: 101,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tengu",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -909,7 +909,7 @@ const imageData = [
       {
     id: 102,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Tsuchigumo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -918,7 +918,7 @@ const imageData = [
       {
     id: 103,
     category: "Supernatural",
-    imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri: require("./assets/category1/image2.jpg"),
     title: "Yatagarasu",
     artist: "",
     tattooBackgrounds: "Clouds",

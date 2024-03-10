@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 
@@ -110,10 +110,10 @@ const Suikoden = () => {
       {suikodenData.map((fauna) => (
         <View key={Suikoden.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={Suikoden.imageUri} style={{ width: 100, height: 100 }} />
-          <Text style={{ fontWeight: 'bold' }}>{Suikoden.title}</Text>
-          <Text>Artist: {Suikoden.artist}</Text>
-          <Text>Tattoo Backgrounds: {Suikoden.tattooBackgrounds}</Text>
-          <Text>Pairings: {Suikoden.pairings}</Text>
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>{Suikoden.title}</Text>
+          <Text style={styles.text}>Artist: {Suikoden.artist}</Text>
+          <Text style={styles.text}>Tattoo Backgrounds: {Suikoden.tattooBackgrounds}</Text>
+          <Text style={styles.text}>Pairings: {Suikoden.pairings}</Text>
         </View>
       ))}
     </ScrollView>
@@ -121,3 +121,25 @@ const Suikoden = () => {
 };
 
 export default Suikoden
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+  },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  text: {
+    color: '#fff',
+  },
+});

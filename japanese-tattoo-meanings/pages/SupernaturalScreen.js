@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 
@@ -165,11 +165,11 @@ const Supernatural = () => {
       {supernaturalData.map((Supernatural) => (
         <View key={Supernatural.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={Supernatural.imageUri} style={{ width: 100, height: 100 }} />
-          <Text style={{ fontWeight: 'bold' }}>{Supernatural.title}</Text>
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>{Supernatural.title}</Text>
          
-          <Text>Artist: {Supernatural.artist}</Text>
-          <Text>Tattoo Backgrounds: {Supernatural.tattooBackgrounds}</Text>
-          <Text>Pairings: {Supernatural.pairings}</Text>
+          <Text style={styles.text}>Artist: {Supernatural.artist}</Text>
+          <Text style={styles.text}>Tattoo Backgrounds: {Supernatural.tattooBackgrounds}</Text>
+          <Text style={styles.text}>Pairings: {Supernatural.pairings}</Text>
         </View>
       ))}
     </ScrollView>
@@ -178,3 +178,26 @@ const Supernatural = () => {
 
 
 export default Supernatural
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+  },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  text: {
+    color: '#fff',
+  },
+});

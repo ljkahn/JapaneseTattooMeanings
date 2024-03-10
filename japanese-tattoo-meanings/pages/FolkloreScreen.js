@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 
@@ -399,10 +399,10 @@ const Folklore = () => {
       {folkloreData.map((fauna) => (
         <View key={Folklore.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={Folklore.imageUri} style={{ width: 100, height: 100 }} />
-          <Text style={{ fontWeight: 'bold' }}>{Folklore.title}</Text>
-          <Text>Artist: {Folklore.artist}</Text>
-          <Text>Tattoo Backgrounds: {Folklore.tattooBackgrounds}</Text>
-          <Text>Pairings: {Folklore.pairings}</Text>
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>{Folklore.title}</Text>
+          <Text style={styles.text}>Artist: {Folklore.artist}</Text>
+          <Text style={styles.text}>Tattoo Backgrounds: {Folklore.tattooBackgrounds}</Text>
+          <Text style={styles.text}>Pairings: {Folklore.pairings}</Text>
         </View>
       ))}
     </ScrollView>
@@ -410,3 +410,25 @@ const Folklore = () => {
 };
 
 export default Folklore
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+  },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  text: {
+    color: '#fff',
+  },
+});

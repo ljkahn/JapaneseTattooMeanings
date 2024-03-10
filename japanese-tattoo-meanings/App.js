@@ -14,6 +14,7 @@ import FloraScreen from './pages/FloraScreen.js';
 import FolkloreScreen from './pages/FolkloreScreen.js';
 import SupernaturalScreen from './pages/SupernaturalScreen.js';
 import SuikodenScreen from './pages/SuikodenScreen.js';
+import ImageDetailScreen from "./components/ImageDetailScreen.js"
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -49,11 +50,11 @@ export default function App() {
         <Stack.Screen name="Tabs" component={MyTabs} options={{ headerShown: false }} />
         <Stack.Screen name="DeitiesScreen" component={DeitiesScreen} />
         <Stack.Screen name="FaunaScreen" component={FaunaScreen} />
-        <Stack.Screen name="FolkloreScreen" component={FolkloreScreen} />
-        <Stack.Screen name="SuikodenScreen" component={SuikodenScreen} />
         <Stack.Screen name="FloraScreen" component={FloraScreen} />
-       <Stack.Screen name="SupernaturalScreen" component={SupernaturalScreen} />
-
+        <Stack.Screen name="FolkloreScreen" component={FolkloreScreen} />
+        <Stack.Screen name="SupernaturalScreen" component={SupernaturalScreen} />
+        <Stack.Screen name="SuikodenScreen" component={SuikodenScreen} />
+        <Stack.Screen name="ImageDetailScreen" component={ImageDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

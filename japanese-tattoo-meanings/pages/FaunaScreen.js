@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 
@@ -71,14 +71,14 @@ const faunaData = [
 ]
 const Fauna = () => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       {faunaData.map((fauna) => (
         <View key={fauna.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={fauna.imageUri} style={{ width: 100, height: 100 }} />
-          <Text style={{ fontWeight: 'bold' }}>{fauna.title}</Text>
-          <Text>Artist: {fauna.artist}</Text>
-          <Text>Tattoo Backgrounds: {fauna.tattooBackgrounds}</Text>
-          <Text>Pairings: {fauna.pairings}</Text>
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>{fauna.title}</Text>
+          <Text style={styles.text}>Artist: {fauna.artist}</Text>
+          <Text style={styles.text}>Tattoo Backgrounds: {fauna.tattooBackgrounds}</Text>
+          <Text style={styles.text}>Pairings: {fauna.pairings}</Text>
         </View>
       ))}
     </ScrollView>
@@ -86,3 +86,25 @@ const Fauna = () => {
 };
 
 export default Fauna
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+  },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  text: {
+    color: '#fff',
+  },
+});

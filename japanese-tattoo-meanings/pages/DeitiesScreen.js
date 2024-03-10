@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from 'react-native'
+import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 const deitiesData = [    
@@ -160,14 +160,14 @@ const deitiesData = [
 ]
 const Deities = () => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       {deitiesData.map((deity) => (
         <View key={deity.id} style={{ margin: 10, alignItems: 'center' }}>
           <Image source={deity.imageUri} style={{ width: 100, height: 100 }} />
-          <Text style={{ fontWeight: 'bold' }}>{deity.title}</Text>
-          <Text>Artist: {deity.artist}</Text>
-          <Text>Tattoo Backgrounds: {deity.tattooBackgrounds}</Text>
-          <Text>Pairings: {deity.pairings}</Text>
+          <Text style={[styles.text, { fontWeight: 'bold' }]}>{deity.title}</Text>
+          <Text style= {styles.text}>Artist: {deity.artist}</Text>
+          <Text style= {styles.text}>Tattoo Backgrounds: {deity.tattooBackgrounds}</Text>
+          <Text style= {styles.text}>Pairings: {deity.pairings}</Text>
         </View>
       ))}
     </ScrollView>
@@ -175,3 +175,25 @@ const Deities = () => {
 };
 
 export default Deities;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#23231c',
+  },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  category: {
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  image: {
+    width: 200,
+    height: 200,
+  },
+  text: {
+    color: '#fff',
+  },
+});
