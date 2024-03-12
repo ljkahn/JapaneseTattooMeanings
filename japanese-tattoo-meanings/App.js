@@ -1,6 +1,5 @@
-// App.js
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -14,7 +13,7 @@ import FloraScreen from './pages/FloraScreen.js';
 import FolkloreScreen from './pages/FolkloreScreen.js';
 import SupernaturalScreen from './pages/SupernaturalScreen.js';
 import SuikodenScreen from './pages/SuikodenScreen.js';
-import ImageDetailScreen from "./components/ImageDetailScreen.js"
+import ImageDetailScreen from "./components/ImageDetailScreen.js";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -44,6 +43,23 @@ function MyTabs() {
 }
 
 export default function App() {
+  const [orientation, setOrientation] = useState('portrait');
+
+  useEffect(() => {
+    const updateOrientation = () => {
+      const { width, height } = Dimensions.get('window');
+      setOrientation(width > height ? 'landscape' : 'portrait');
+    };
+
+    updateOrientation();
+
+    Dimensions.addEventListener('change', updateOrientation);
+
+    return () => {
+      Dimensions.removeEventListener('change', updateOrientation);
+    };
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator>
