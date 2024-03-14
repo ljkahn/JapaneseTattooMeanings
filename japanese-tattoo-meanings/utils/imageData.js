@@ -1,5 +1,5 @@
 const imageData = [
-  {
+{
     id: 1,
     category: "Deities",
     imageUri: require("../assets/deities/Benzaiten.jpeg"),
@@ -21,34 +21,34 @@ const imageData = [
     {
     id: 3,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/daiikotu.jpg"),
     title: "Daiitoku Myo-Ō",
-    artist: "",
+    artist: "Unknown",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Standalone",
   },
     {
     id: 4,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/daiikokuten.png"),
     title: "Daikokuten",
-    artist: "",
+    artist: "Kitagawa Utamaro II, Ni Dai Me Kitagawa Utamaro",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Ebisu, Flowers, Seven Lucky Gods (Shichi Fuku Jin)",
   },
     {
     id: 5,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/dainichi.jpeg"),
     title: "Dainichi Nyorai",
-    artist: "",
+    artist: "13th Century Unknown",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Lotus (Renge)",
   },
     {
     id: 6,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/dakiniten.jpeg"),
     title: "Dakiniten",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -57,7 +57,7 @@ const imageData = [
     {
     id: 7,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/ebisu.jpeg"),
     title: "Ebisu",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -66,7 +66,7 @@ const imageData = [
     {
     id: 8,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/enma.jpg"),
     title: "Enma",
     artist: "",
     tattooBackgrounds: "Clouds, Fire, Stone",
@@ -75,16 +75,16 @@ const imageData = [
     {
     id: 9,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/fudomyoo.jpeg"),
     title: "Fudō Myo-Ō",
-    artist: "",
+    artist: "Ogata Gekko",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Dragon (Ryū), Lotus (Renge), Kongara Dōji, Seitaka Dōji, Phoenix-Shaped Flame",
   },
     {
     id: 10,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/fuijinRijin.jpeg"),
     title: "Fūjin and Raijin",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Water",
@@ -93,7 +93,7 @@ const imageData = [
     {
     id: 11,
     category: "Deities",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("../assets/deities/hotei.webp"),
     title: "Hotei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -102,7 +102,7 @@ const imageData = [
   {
     id: 12,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/kannon.png"),
     title: "Kannon",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -111,61 +111,61 @@ const imageData = [
     {
     id: 13,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/niO.jpg"),
     title: "Ni-Ō",
-    artist: "",
+    artist: "Katsushika Hokusai  (1760–1849)",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Buddhist Deities and Figures, Demons (Oni), Flowers",
   },
     {
     id: 14,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Seven Lucky Gods",
-    artist: "",
+    artist: "Katsushika Hokusai",
     tattooBackgrounds: "Clouds, Water, Stone",
     pairings: "Standalone",
   },
     {
     id: 15,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/susano.jpg"),
     title: "Susanō",
-    artist: "",
+    artist: "Utagawa Kuniteru)",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Inada Hime, Shintō Deities, Yamata no Orochi",
   },
     {
     id: 16,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/tennyo.jpeg"),
     title: "Tennyo",
-    artist: "",
+    artist: "Katsukawa Shunsho",
     tattooBackgrounds: "Clouds, Water, Stone",
     pairings: "Buddhist Deities, Flowers",
   },
     {
     id: 17,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/oanamuchi.jpeg"),
     title: "Oanamuchi no Mikoto",
-    artist: "",
+    artist: "Utagawa Kuniyoshi",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Wild Beasts",
   },
     {
     id: 18,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/carp.webp"),
     title: "Carp",
-    artist: "",
+    artist: "Utagawa Toyokuni",
     tattooBackgrounds: "Water",
     pairings: "Dragon (Ryū), Flowers, Goldfish (Kingyo)",
   },
   //   {
   //   id: 19,
   //   category: "Fauna",
-  //   // imageUri: require("./assets/category1/image2.jpg"),
+    // imageUri:require("../assets/deities/luckyGods.jpeg"),
   //   title: "",
   //   artist: "",
   //   tattooBackgrounds: "",
@@ -174,45 +174,45 @@ const imageData = [
     {
     id: 20,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/crane.webp"),
     title: "Crane",
-    artist: "",
+    artist: "Utagawa Hiroshige ",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Lucky Charms",
   },
     {
     id: 21,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/fox.webp"),
     title: "Fox",
-    artist: "",
+    artist: "Utagawa Kuniyoshi",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Dakiniten, Deities, Flowers, Inari (Inari Ōkami), Lucky Charms",
   },
   {
     id: 23,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/goldfish.jpeg"),
     title: "Goldfish",
-    artist: "",
+    artist: "Ohara Koson",
     tattooBackgrounds: "Water",
     pairings: "Carp (Koi), Flowers, Freshwater Elements, Lucky Charms",
   },
     {
     id: 24,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/hawk.jpg"),
     title: "Hawk",
-    artist: "",
+    artist: "Eisen Keisai",
     tattooBackgrounds: "Clouds",
     pairings: "Camellias (Tsubaki), Flowers, Pine Trees (Matsu), Snake (Hebi), Warriors",
   },
     {
     id: 25,
     category: "Fauna",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/snake.jpeg"),
     title: "Snake",
-    artist: "",
+    artist: "Utagawa Kuniyoshi",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: " Flowers, Hakamadare, Hannya, Kintarō, Orochimaru, Saginoike Heikurō",
     note: "Snakes can be paired with many elements beyond the brief listing above."
@@ -220,27 +220,27 @@ const imageData = [
     {
     id: 26,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/tiger.jpeg"),
     title: "Tiger",
-    artist: "",
+    artist: "Ohara Koson",
     tattooBackgrounds: "Clouds, Lightening, Stone, Water",
     pairings: "Bamboo (Take), Demons (Oni), Dragon (Ryū), Flowers, Gyōja Bushō, Shoki",
   },
     {
     id: 27,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/bamboo.webp"),
     title: "Bamboo",
-    artist: "",
+    artist: "Hiroshi Yoshida",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Birds, Chinese Elements, Shōchikubai, Tiger (Tora), Warriors",
   },
     {
     id: 28,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/cherryBlossoms.webp"),
     title: "Cherry Blossoms",
-    artist: "",
+    artist: "Yoshimoto Gesso",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Spring Elements, Elements associated with mortality",
     note: "Cherry Blossoms can be paired with many elements beyond the brief listing above."
@@ -248,7 +248,7 @@ const imageData = [
     {
     id: 29,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Chrysanthemum",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -258,7 +258,7 @@ const imageData = [
     {
     id: 30,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Lotus",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -267,7 +267,7 @@ const imageData = [
     {
     id: 31,
     category: "Flora",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Maple Leaves",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -277,7 +277,7 @@ const imageData = [
     {
     id: 32,
     category: "Flora",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Peach",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -286,7 +286,7 @@ const imageData = [
   {
     id: 33,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Peony",
     artist: "Yun Shouping",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -295,7 +295,7 @@ const imageData = [
     {
     id: 34,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Banzuiin Chōbei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -304,7 +304,7 @@ const imageData = [
     {
     id: 35,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Benkei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -313,7 +313,7 @@ const imageData = [
     {
     id: 36,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Dakki no Ohyaku",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -322,7 +322,7 @@ const imageData = [
     {
     id: 37,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Daruma",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -331,7 +331,7 @@ const imageData = [
     {
     id: 38,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Firefighters",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -340,7 +340,7 @@ const imageData = [
     {
     id: 39,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Fujiwara no Hidesato",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -349,7 +349,7 @@ const imageData = [
     {
     id: 40,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Hakamadare and Kidōmaru",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -358,7 +358,7 @@ const imageData = [
     {
     id: 41,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Hanjō Danjō no Jō Arakage and the Giant Salamander",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -367,7 +367,7 @@ const imageData = [
     {
     id: 42,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Hannya",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -376,7 +376,7 @@ const imageData = [
   {
     id: 43,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Hayakawa Ayunosuke",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -385,7 +385,7 @@ const imageData = [
     {
     id: 44,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Higuchi Kanemitsue",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -394,7 +394,7 @@ const imageData = [
     {
     id: 45,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Iga Jutarō and Takiyasha-Hime",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -403,7 +403,7 @@ const imageData = [
     {
     id: 46,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "I No Hayata and the Nue",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening",
@@ -412,7 +412,7 @@ const imageData = [
     {
     id: 47,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Ishikawa Goemon",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -421,7 +421,7 @@ const imageData = [
     {
     id: 48,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Jigoku Dayū",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -430,7 +430,7 @@ const imageData = [
     {
     id: 49,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Jiraiya and Tsunade",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -439,7 +439,7 @@ const imageData = [
     {
     id: 50,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kamigashi-hime",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -448,7 +448,7 @@ const imageData = [
     {
     id: 51,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kanu Unchō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -457,7 +457,7 @@ const imageData = [
     {
     id: 52,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Kazusa Hirotsune",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -466,7 +466,7 @@ const imageData = [
   {
     id: 53,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kintarō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -475,7 +475,7 @@ const imageData = [
     {
     id: 54,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kiyohime",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -484,7 +484,7 @@ const imageData = [
     {
     id: 55,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Minamoto no Tsunetomo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -493,7 +493,7 @@ const imageData = [
     {
     id: 56,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Minamoto no Yorimitsu",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -502,7 +502,7 @@ const imageData = [
     {
     id: 57,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Minamoto no Yoshitsune",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -511,7 +511,7 @@ const imageData = [
     {
     id: 58,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Miyamoto Musashi",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -520,7 +520,7 @@ const imageData = [
     {
     id: 59,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Momotarō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -529,7 +529,7 @@ const imageData = [
     {
     id: 60,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Mongaku",
     artist: "",
     tattooBackgrounds: "Water",
@@ -538,7 +538,7 @@ const imageData = [
     {
     id: 61,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Onibaba",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -547,7 +547,7 @@ const imageData = [
     {
     id: 62,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Oniwakamaru",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -556,7 +556,7 @@ const imageData = [
   {
     id: 63,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Ryū-Ō Tarō",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -565,7 +565,7 @@ const imageData = [
     {
     id: 64,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Saginoike Heikurō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -574,7 +574,7 @@ const imageData = [
     {
     id: 65,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Satō Masakiyo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -583,7 +583,7 @@ const imageData = [
     {
     id: 66,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Shimose Kaga",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -592,7 +592,7 @@ const imageData = [
     {
     id: 67,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Shoki",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -601,7 +601,7 @@ const imageData = [
     {
     id: 68,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Son Goku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -610,7 +610,7 @@ const imageData = [
     {
     id: 69,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Taira no Tomomori",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -619,7 +619,7 @@ const imageData = [
     {
     id: 70,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tamatori-hime",
     artist: "",
     tattooBackgrounds: "Water",
@@ -628,7 +628,7 @@ const imageData = [
     {
     id: 71,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tenjik Tokubei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -637,7 +637,7 @@ const imageData = [
     {
     id: 72,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Toki Daishirō Motosada",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -646,7 +646,7 @@ const imageData = [
   {
     id: 73,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tomoe Gozen",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -655,7 +655,7 @@ const imageData = [
     {
     id: 74,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Waiso Saburō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -664,7 +664,7 @@ const imageData = [
       {
     id: 75,
     category: "Folklore/History",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Watanabe no Tsuna",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -674,7 +674,7 @@ const imageData = [
     {
     id: 76,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Gyōja Bushō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -683,7 +683,7 @@ const imageData = [
     {
     id: 77,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kanchi Kotsuritsu Shuki",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -692,7 +692,7 @@ const imageData = [
     {
     id: 78,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kaoshō Rochisin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -701,7 +701,7 @@ const imageData = [
     {
     id: 79,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Konkoryū Rishun",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -710,7 +710,7 @@ const imageData = [
     {
     id: 80,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Ko Sanjō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -719,7 +719,7 @@ const imageData = [
     {
     id: 81,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kumonryū Shishin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -728,7 +728,7 @@ const imageData = [
     {
     id: 82,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Rori Hakuchō Chōjun",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -737,7 +737,7 @@ const imageData = [
     {
     id: 83,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Rōshi Ensei",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -746,7 +746,7 @@ const imageData = [
   {
     id: 84,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Saienshi Chōsei",
     artist: "",
     tattooBackgrounds: "Clouds, stone, Water",
@@ -755,7 +755,7 @@ const imageData = [
     {
     id: 85,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Senkaji Chō-Ō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -764,7 +764,7 @@ const imageData = [
     {
     id: 86,
     category: "Suikoden",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tanmei Jirō Gen Shōgo",
     artist: "",
     tattooBackgrounds: "Water",
@@ -773,7 +773,7 @@ const imageData = [
     {
     id: 87,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Baku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -782,7 +782,7 @@ const imageData = [
     {
     id: 88,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Dragon",
     artist: "",
     tattooBackgrounds: "Clouds, Water",
@@ -792,7 +792,7 @@ const imageData = [
     {
     id: 89,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Dragon and Tiger",
     artist: "",
     tattooBackgrounds: "Clouds, Lightening, Stone, Water",
@@ -801,7 +801,7 @@ const imageData = [
     {
     id: 90,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Hakutaku",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -810,7 +810,7 @@ const imageData = [
     {
     id: 91,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Kappa",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -819,7 +819,7 @@ const imageData = [
     {
     id: 92,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Karajishi",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -828,7 +828,7 @@ const imageData = [
     {
     id: 93,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image1.jpg"),
+    imageUri: require("./assets/category1/image1.jpg"),
     title: "Kirin",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -837,7 +837,7 @@ const imageData = [
   {
     id: 94,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Namakubi",
     artist: "",
     tattooBackgrounds: "Clouds, Stonem, Water",
@@ -846,7 +846,7 @@ const imageData = [
     {
     id: 95,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Nekomata",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -855,7 +855,7 @@ const imageData = [
     {
     id: 96,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Ōmukade",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -864,7 +864,7 @@ const imageData = [
     {
     id: 97,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Phoenix",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -873,7 +873,7 @@ const imageData = [
     {
     id: 98,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Rokuro Kubi",
     artist: "",
     tattooBackgrounds: "Clouds",
@@ -882,7 +882,7 @@ const imageData = [
     {
     id: 99,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Sōjōbō",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -891,7 +891,7 @@ const imageData = [
     {
     id: 100,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Sumizome",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -900,7 +900,7 @@ const imageData = [
       {
     id: 101,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tengu",
     artist: "",
     tattooBackgrounds: "Clouds, Stone, Water",
@@ -909,7 +909,7 @@ const imageData = [
       {
     id: 102,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Tsuchigumo",
     artist: "",
     tattooBackgrounds: "Clouds, Stone",
@@ -918,7 +918,7 @@ const imageData = [
       {
     id: 103,
     category: "Supernatural",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Yatagarasu",
     artist: "",
     tattooBackgrounds: "Clouds",
