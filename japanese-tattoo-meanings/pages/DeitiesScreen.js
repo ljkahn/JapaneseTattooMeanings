@@ -2,6 +2,7 @@ import { View, Text, ScrollView, Image, StyleSheet } from 'react-native'
 import React from 'react'
 
 const deitiesData = [    
+
 {
     id: 1,
     category: "Deities",
@@ -114,45 +115,45 @@ const deitiesData = [
     {
     id: 13,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri: require("../assets/deities/niO.jpg"),
     title: "Ni-Ō",
-    artist: "",
+    artist: "Katsushika Hokusai  (1760–1849)",
     tattooBackgrounds: "Clouds, Stone",
     pairings: "Buddhist Deities and Figures, Demons (Oni), Flowers",
   },
     {
     id: 14,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/luckyGods.jpeg"),
     title: "Seven Lucky Gods",
-    artist: "",
+    artist: "Katsushika Hokusai",
     tattooBackgrounds: "Clouds, Water, Stone",
     pairings: "Standalone",
   },
     {
     id: 15,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/susano.jpg"),
     title: "Susanō",
-    artist: "",
+    artist: "Utagawa Kuniteru)",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Inada Hime, Shintō Deities, Yamata no Orochi",
   },
     {
     id: 16,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/tennyo.jpeg"),
     title: "Tennyo",
-    artist: "",
+    artist: "Katsukawa Shunsho",
     tattooBackgrounds: "Clouds, Water, Stone",
     pairings: "Buddhist Deities, Flowers",
   },
     {
     id: 17,
     category: "Deities",
-    // imageUri: require("./assets/category1/image2.jpg"),
+    imageUri:require("../assets/deities/oanamuchi.jpeg"),
     title: "Oanamuchi no Mikoto",
-    artist: "",
+    artist: "Utagawa Kuniyoshi",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Wild Beasts",
   },
