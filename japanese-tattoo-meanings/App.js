@@ -44,26 +44,27 @@ function MyTabs() {
 
 export default function App() {
   const [orientation, setOrientation] = useState('portrait');
-
   useEffect(() => {
-    const updateOrientation = () => {
-      const { width, height } = Dimensions.get('window');
+    const subscription = Dimensions.addEventListener('change', ({ window: { width, height } }) => {
       setOrientation(width > height ? 'landscape' : 'portrait');
-    };
+    });
 
-    updateOrientation();
-
-    Dimensions.addEventListener('change', updateOrientation);
-
+    // Return a cleanup function that removes the event listener
     return () => {
-      Dimensions.removeEventListener('change', updateOrientation);
+      // Check if the subscription has a remove function and use it
+      if (subscription.remove) {
+        subscription.remove();
+      } else {
+        // Older versions of React Native might still require calling `removeEventListener`
+        Dimensions.removeEventListener('change', updateOrientation);
+      }
     };
   }, []);
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Tabs" component={MyTabs} options={{ headerShown: false }} />
+        <Stack.Screen name="Tabs" component={MyTabs} options={{ headerShown: false, title: "Back" }} />
         <Stack.Screen name="DeitiesScreen" component={DeitiesScreen} />
         <Stack.Screen name="FaunaScreen" component={FaunaScreen} />
         <Stack.Screen name="FloraScreen" component={FloraScreen} />
