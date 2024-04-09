@@ -1,33 +1,61 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet, StatusBar} from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Text, StatusBar, StyleSheet, Animated, ImageBackground } from 'react-native';
+
+const backgroundImages = [
+  require("../assets/backgroundImages/crane1.jpeg"),
+  require("../assets/backgroundImages/ebisu1.jpeg"),
+  require("../assets/backgroundImages/kanchi1.jpeg"),
+  require("../assets/backgroundImages/lotus1.jpeg"),
+  require("../assets/backgroundImages/oniwakamaru1.jpeg"),
+  require("../assets/backgroundImages/rokuro1.jpeg"),
+];
 
 function HomeScreen({ handleHistoryPress, handleCategoriesPress }) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const opacityAnim = useRef(new Animated.Value(0)).current; // Initial value for opacity: 0
+
+  useEffect(() => {
+    const fadeIn = () => {
+      Animated.timing(opacityAnim, {
+        toValue: 1,
+        duration: 5000,
+        useNativeDriver: true,
+      }).start();
+    };
+
+    const changeImage = () => {
+      Animated.timing(opacityAnim, {
+        toValue: 0,
+        duration: 1000,
+        useNativeDriver: true,
+      }).start(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length); // Cycle through the images
+        fadeIn(); // Fade in the next image
+      });
+    };
+
+    fadeIn(); // Start the initial fade-in animation
+
+    const intervalId = setInterval(() => {
+      changeImage(); // Change the image every 6 seconds (5000ms fade in + 1000ms fade out)
+    }, 6000);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, [opacityAnim]);
+
   return (
     <View style={styles.container}>
-      <Text style={{ color: "#fff" }}>Welcome to the Japanese Tattooing App</Text>
-      <Text style={{ color: "#fff" }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
-
-      {/* <TouchableOpacity onPress={handleHistoryPress}>
-        <Image
-          source={require("../assets/deities/Benzaiten.jpeg")}
-          style={{ width: 200, height: 200 }}
-          resizeMode="contain"
-        />
-      </TouchableOpacity>
-
-      <Text style={{ color: "#fff" }}>History</Text>
-
-      <TouchableOpacity onPress={handleCategoriesPress}>
-        <Image
-          source={require("../assets/deities/Benzaiten.jpeg")}
-          style={{ width: 200, height: 200 }}
-          resizeMode="contain"
-        />
-      </TouchableOpacity>
-
-      <Text style={{ color: "#fff" }}>Categories</Text> */}
-      
-      <StatusBar style="auto" />
+      <Animated.View style={{ opacity: opacityAnim, width: '100%', height: '100%' }}>
+        <ImageBackground
+          source={backgroundImages[currentImageIndex]}
+          style={styles.imageBackground}
+          resizeMode="cover"
+        >
+          <Text style={{ color: "#fff" }}>Welcome to the Japanese Tattooing App</Text>
+          <Text style={{ color: "#fff" }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
+          <StatusBar style="auto" />
+        </ImageBackground>
+      </Animated.View>
     </View>
   );
 }
@@ -35,10 +63,13 @@ function HomeScreen({ handleHistoryPress, handleCategoriesPress }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#23231c',
     alignItems: 'center',
     justifyContent: 'center',
-    color: "#fff"
+  },
+  imageBackground: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
