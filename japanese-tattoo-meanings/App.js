@@ -7,6 +7,9 @@ import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './pages/HomeScreen.js';
 import CategoryScreen from './pages/CategoryScreen.js';
 import SearchScreen from './pages/SearchScreen.js';
+import AboutScreen from './pages/AboutScreen.js';
+
+
 import DeitiesScreen from './pages/DeitiesScreen.js';
 import FaunaScreen from './pages/FaunaScreen.js';
 import FloraScreen from './pages/FloraScreen.js';
@@ -25,19 +28,23 @@ function MyTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
+            iconName = focused ? 'home' : 'home-outline'; color = '#000';
           } else if (route.name === 'Categories') {
-            iconName = focused ? 'list' : 'list-outline';
+            iconName = focused ? 'list' : 'list-outline';color = '#000';
           } else if (route.name === 'Search') {
-            iconName = focused ? 'search' : 'search-outline';
+            iconName = focused ? 'search' : 'search-outline';color = '#000';
+          } else if (route.name === 'About') {
+            iconName = focused ? 'brush' : 'brush-outline'; color = '#000';
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
+       <Tab.Screen name="About" component={AboutScreen} />
       <Tab.Screen name="Categories" component={CategoryScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
+     
     </Tab.Navigator>
   );
 }

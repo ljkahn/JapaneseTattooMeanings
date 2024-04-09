@@ -1,36 +1,35 @@
-// CategoryScreen.js
 import React from 'react';
-import { View, Text, Image, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 
 function CategoryScreen({ navigation }) {
-  console.log(navigation)
   const categories = [
     { name: 'Deities', image: require("../assets/deities/sevenLuckyGods.jpeg"), screen: 'DeitiesScreen' },
     { name: 'Fauna', image: require("../assets/fauna/kitsune.jpeg"), screen: 'FaunaScreen' },
     { name: 'Flora', image: require("../assets/flora/peony.jpeg"), screen: 'FloraScreen' },
     { name: 'Folklore', image: require("../assets/folklore/onibaba.jpeg"), screen: 'FolkloreScreen' },
-    { name: 'Supernatural', image: require("../assets/supernatural/baku.jpeg"), screen: 'SupernaturalScreen' },
     { name: 'Suikoden', image: require("../assets/suikoden/senkaji.jpeg"), screen: 'SuikodenScreen' },
-  
+    { name: 'Supernatural', image: require("../assets/supernatural/baku.jpeg"), screen: 'SupernaturalScreen' },
   ];
 
+  const renderCategory = ({ item }) => (
+    <TouchableOpacity 
+      key={item.name} 
+      style={styles.category} 
+      onPress={() => navigation.navigate(item.screen)}
+    >
+      <Image source={item.image} style={styles.image} resizeMode="contain" />
+      <Text style={styles.text}>{item.name}</Text>
+    </TouchableOpacity>
+  );
+
   return (
-    <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollView}>
-        {categories.map((category, index) => (
-<TouchableOpacity key={index} onPress={() => {
-  console.log(`Navigating to ${category.screen}`);
-  navigation.navigate(category.screen);
-}}>
-  <TouchableOpacity onPress={() => alert('Image Clicked!')}></TouchableOpacity>
-            <View style={styles.category}>
-              <Image source={category.image} style={styles.image} resizeMode="contain" />
-              <Text style={styles.text}>{category.name}</Text>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
+    <FlatList
+      data={categories}
+      renderItem={renderCategory}
+      keyExtractor={item => item.name}
+      numColumns={2}
+      contentContainerStyle={styles.container}
+    />
   );
 }
 
@@ -38,22 +37,23 @@ export default CategoryScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingHorizontal: 10, // Adjust padding as needed for spacing
+    paddingTop: 10, // Add padding at the top for better look
     backgroundColor: '#23231c',
   },
-  scrollView: {
+  category: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  category: {
-    alignItems: 'center',
-    marginBottom: 20,
+    margin: 5,
+    marginBottom: 20, // Increase space between rows
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 150, // Adjust the width as necessary
+    height: 150, // Adjust the height as necessary
   },
   text: {
     color: '#fff',
+    marginTop: 10, // Add space between the image and the text
   },
 });
