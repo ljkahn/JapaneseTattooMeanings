@@ -13,6 +13,7 @@ const faunaData = [
     artist: "Utagawa Toyokuni",
     tattooBackgrounds: "Water",
     pairings: "Dragon (Ryū), Flowers, Goldfish (Kingyo)",
+    history:"jafdafndjskanfdksj",
   },
   //   {
   //   id: 19,
