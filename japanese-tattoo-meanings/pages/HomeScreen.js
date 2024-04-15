@@ -51,8 +51,8 @@ function HomeScreen({ handleHistoryPress, handleCategoriesPress }) {
           style={styles.imageBackground}
           resizeMode="cover"
         >
-          <Text style={{ color: "#fff" }}>Welcome to the Japanese Tattooing App</Text>
-          <Text style={{ color: "#fff" }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
+          <Text style={{ color: "#fff", backgroundColor: "#23231c" }}>Welcome to the Japanese Tattooing App</Text>
+          <Text style={{ color: "#fff", backgroundColor: "#23231c"  }}>Unveiling the Timeless Art of Japanese Tattooing</Text>
           <StatusBar style="auto" />
         </ImageBackground>
       </Animated.View>
