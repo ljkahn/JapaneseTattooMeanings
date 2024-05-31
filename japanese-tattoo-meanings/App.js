@@ -28,7 +28,7 @@ function MyTabs() {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline'; color = '#000';
+            iconName = focused ? 'home' : 'home-outline'; color = '#23231c';
           } else if (route.name === 'Categories') {
             iconName = focused ? 'list' : 'list-outline';color = '#000';
           } else if (route.name === 'Search') {
@@ -87,7 +87,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#23231c',
+    backgroundColor: '##c5cccf',
     alignItems: 'center',
     justifyContent: 'center',
     color: "#fff"

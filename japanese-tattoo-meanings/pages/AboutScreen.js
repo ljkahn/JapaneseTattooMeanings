@@ -14,7 +14,7 @@ function HistoryScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#23231c',
+    backgroundColor: '#ae4d4d',
   },
   scrollView: {
     alignItems: 'center',

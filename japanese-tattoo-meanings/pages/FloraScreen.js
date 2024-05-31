@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
   container: {
     // Add or adjust styles for the container if needed
     paddingHorizontal: 10, // Adjust padding as needed
-    backgroundColor:'#23231c'
+    backgroundColor:'#cfc0a7'
   },
   item: {
     flex: 1,

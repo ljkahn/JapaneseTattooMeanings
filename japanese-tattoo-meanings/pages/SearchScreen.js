@@ -47,7 +47,7 @@ const SearchScreen = ({ closeModal }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#23231c',
+    backgroundColor: '#cfc0a7',
     paddingHorizontal: 10,
     paddingTop: 10,
   },

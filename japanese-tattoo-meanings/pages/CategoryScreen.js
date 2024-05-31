@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
     paddingTop: 10,
-    backgroundColor: '#23231c',  // Dark green background
+    backgroundColor: '#ae4d4d',  // Dark green background
   },
   category: {
     flex: 1,
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 5,
     marginBottom: 20,
-    backgroundColor: '#262620',  // Lighter box color for contrast
+    backgroundColor: '#D8D0C1',  // Lighter box color for contrast
     borderRadius: 15,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
