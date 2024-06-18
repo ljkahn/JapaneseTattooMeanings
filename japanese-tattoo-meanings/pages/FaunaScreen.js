@@ -1,6 +1,7 @@
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import {useNavigation} from '@react-navigation/native';
+import { globalStyles, colors } from '../styles/styles';
 
 
 
@@ -80,7 +81,7 @@ const faunaData = [
     pairings: "Bamboo (Take), Demons (Oni), Dragon (Ryū), Flowers, Gyōja Bushō, Shoki",
   },
 ]
-const Fauna = () => {
+function FaunaScreen() {
   const navigation = useNavigation();
 
   const handlePress = (item) => {
@@ -90,46 +91,46 @@ const Fauna = () => {
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handlePress(item)} style={styles.item}>
       <Image source={item.imageUri} style={styles.image} />
-      <Text style={[styles.text, { fontWeight: 'bold' }]}>{item.title}</Text>
-      {/* Uncomment below if you want to show more details in the grid view
-      <Text style={styles.text}>Artist: {item.artist}</Text>
-      <Text style={styles.text}>Tattoo Backgrounds: {item.tattooBackgrounds}</Text>
-      <Text style={styles.text}>Pairings: {item.pairings}</Text>
-      */}
+      <Text style={[globalStyles.text, styles.title]}>{item.title}</Text>
     </TouchableOpacity>
   );
 
   return (
     <FlatList
-      data={faunaData}
+      data={faunaData
+      }
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
-      numColumns={2} // Set the number of columns you want here
+      numColumns={2}
       contentContainerStyle={styles.container}
     />
   );
-};
+}
 
-export default Fauna;
+export default FaunaScreen;
 
 const styles = StyleSheet.create({
   container: {
-    // Add or adjust styles for the container if needed
-    paddingHorizontal: 10, // Adjust padding as needed
-    backgroundColor:'#cfc0a7'
+    paddingHorizontal: 10,
+    backgroundColor: colors.background,
   },
   item: {
     flex: 1,
-    margin: 5, // Adjust spacing between items
-    alignItems: 'center', // Center items horizontally in their flex container
+    margin: 5,
+    alignItems: 'center',
+    backgroundColor: colors.accent,
+    borderRadius: 10,
+    padding: 10,
   },
   image: {
-    width: 150, // Adjust size based on your layout preference and screen size
-    height: 150, // Adjust size based on your layout preference and screen size
-    marginBottom: 5, // Space between the image and the text below it
+    width: '100%',
+    height: 150,
+    resizeMode: 'contain',
   },
-  text: {
-    color: '#fff',
-    textAlign: 'center', // Ensure text is centered under the image
+  title: {
+    color: colors.text,
+    textAlign: 'center',
+    marginTop: 5,
+    fontWeight: 'bold',
   },
 });

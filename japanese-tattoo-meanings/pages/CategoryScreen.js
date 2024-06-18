@@ -1,103 +1,97 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, FlatList, TouchableOpacity, Animated } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
+import { globalStyles, colors } from '../styles/styles';
+
+const images = [
+  require('../assets/backgroundImages/crane1.jpeg'),
+  require('../assets/backgroundImages/ebisu1.jpeg'),
+  require('../assets/backgroundImages/kanchi1.jpeg'),
+  require('../assets/backgroundImages/lotus1.jpeg'),
+  require('../assets/backgroundImages/oniwakamaru1.jpeg'),
+  require('../assets/backgroundImages/rokuro1.jpeg'),
+];
 
 const categories = [
-  { name: 'Deities', image: require("../assets/deities/sevenLuckyGods.jpeg"), screen: 'DeitiesScreen' },
-  { name: 'Fauna', image: require("../assets/fauna/kitsune.jpeg"), screen: 'FaunaScreen' },
-  { name: 'Flora', image: require("../assets/flora/peony.jpeg"), screen: 'FloraScreen' },
-  { name: 'Folklore', image: require("../assets/folklore/onibaba.jpeg"), screen: 'FolkloreScreen' },
-  { name: 'Suikoden', image: require("../assets/suikoden/senkaji.jpeg"), screen: 'SuikodenScreen' },
-  { name: 'Supernatural', image: require("../assets/supernatural/baku.jpeg"), screen: 'SupernaturalScreen' },
+  { id: 1, name: 'Deities', screen: 'DeitiesScreen' },
+  { id: 2, name: 'Fauna', screen: 'FaunaScreen' },
+  { id: 3, name: 'Flora', screen: 'FloraScreen' },
+  { id: 4, name: 'Folklore', screen: 'FolkloreScreen' },
+  { id: 5, name: 'Supernatural', screen: 'SupernaturalScreen' },
+  { id: 6, name: 'Suikoden', screen: 'SuikodenScreen' },
 ];
 
 function CategoryScreen({ navigation }) {
-  const renderCategory = ({ item }) => (
-    <TouchableScale
+  const [imageIndex, setImageIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const intervalId = setInterval(() => {
+      setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.categoryButton}
       onPress={() => navigation.navigate(item.screen)}
-      style={styles.category}
     >
-      <Image source={item.image} style={styles.image} resizeMode="contain" />
-      <Text style={styles.text}>{item.name}</Text>
-    </TouchableScale>
+      <Text style={globalStyles.categoryButtonText}>{item.name}</Text>
+    </TouchableOpacity>
   );
 
+  const numColumns = 2;
+
   return (
-    <FlatList
-      data={categories}
-      renderItem={renderCategory}
-      keyExtractor={item => item.name}
-      numColumns={2}
-      contentContainerStyle={styles.container}
-      showsVerticalScrollIndicator={false}
-      ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
-    />
+    <ImageBackground
+      source={images[imageIndex]}
+      style={styles.background}
+      imageStyle={styles.backgroundImage}
+    >
+      <View style={styles.overlay}>
+        <FlatList
+          key={numColumns} // Change the key prop to force a fresh render
+          data={categories}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id.toString()}
+          numColumns={numColumns} // Set the number of columns
+          contentContainerStyle={styles.list}
+        />
+      </View>
+    </ImageBackground>
   );
 }
 
-export default CategoryScreen;
-
-const TouchableScale = ({ children, onPress, style }) => {
-  const scale = new Animated.Value(1);
-
-  const handlePressIn = () => {
-    Animated.spring(scale, {
-      toValue: 0.95,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  const handlePressOut = () => {
-    Animated.spring(scale, {
-      toValue: 1,
-      friction: 5,
-      useNativeDriver: true,
-    }).start();
-  };
-
-  return (
-    <TouchableOpacity
-      onPress={onPress}
-      onPressIn={handlePressIn}
-      onPressOut={handlePressOut}
-      style={style}
-    >
-      <Animated.View style={{ transform: [{ scale }] }}>
-        {children}
-      </Animated.View>
-    </TouchableOpacity>
-  );
-};
-
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 10,
-    paddingTop: 10,
-    backgroundColor: '#ae4d4d',  // Dark green background
-  },
-  category: {
+  background: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  backgroundImage: {
+    opacity: 0.3,
+  },
+  overlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // This will create a dark overlay
+    width: '100%',
+    height: '100%',
+  },
+  list: {
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 5,
-    marginBottom: 20,
-    backgroundColor: '#D8D0C1',  // Lighter box color for contrast
-    borderRadius: 15,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
   },
-  image: {
-    width: 140,
-    height: 140,
+  categoryButton: {
+    backgroundColor: colors.accent,
+    padding: 20,
+    margin: 10,
     borderRadius: 10,
-    marginTop: 10,
-  },
- text: {
-    color: '#fff',
-    fontWeight: '600',
-    fontSize: 16,
-    textAlign: 'center',  // Center text horizontally
+    width: Dimensions.get('window').width / 2.5, // Adjust width for two columns
+    height: Dimensions.get('window').width / 2.5, // Make buttons square
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
+
+export default CategoryScreen;

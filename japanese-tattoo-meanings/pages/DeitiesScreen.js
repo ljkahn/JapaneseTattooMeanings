@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, FlatList, ImageBackground, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { globalStyles, colors } from '../styles/styles';
+
 
 const deitiesData = [
   {
@@ -158,7 +160,8 @@ const deitiesData = [
   },
 ];
 
-const Deities = () => {
+
+function DeitiesScreen() {
   const navigation = useNavigation();
 
   const handlePress = (item) => {
@@ -167,8 +170,8 @@ const Deities = () => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity onPress={() => handlePress(item)} style={styles.item}>
-      {/* <ImageBackground source={item.imageUri} style={styles.image} resizeMode="cover" /> */}
-      <Text style={[styles.text, { fontWeight: 'bold' }]}>{item.title}</Text>
+      <Image source={item.imageUri} style={styles.image} />
+      <Text style={[globalStyles.text, styles.title]}>{item.title}</Text>
     </TouchableOpacity>
   );
 
@@ -181,28 +184,32 @@ const Deities = () => {
       contentContainerStyle={styles.container}
     />
   );
-};
+}
 
-export default Deities;
+export default DeitiesScreen;
 
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-    backgroundColor: '#ae4d4d',
+    backgroundColor: colors.background,
   },
   item: {
     flex: 1,
     margin: 5,
     alignItems: 'center',
+    backgroundColor: colors.accent,
+    borderRadius: 10,
+    padding: 10,
   },
   image: {
-    width: 150,
+    width: '100%',
     height: 150,
-    justifyContent: 'center',
-    alignItems: 'center',
+    resizeMode: 'contain',
   },
-  text: {
-    color: '#fff',
+  title: {
+    color: colors.text,
     textAlign: 'center',
+    marginTop: 5,
+    fontWeight: 'bold',
   },
 });

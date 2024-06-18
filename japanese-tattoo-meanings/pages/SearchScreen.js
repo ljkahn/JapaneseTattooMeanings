@@ -1,69 +1,46 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity, FlatList, Text } from 'react-native';
+import { View, TextInput, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import imageData from '../utils/imageData'; // Import your image data here
+import imageData from '../utils/imageData';
+import { globalStyles, colors } from '../styles/styles';
 
-const SearchScreen = ({ closeModal }) => {
+const SearchScreen = () => {
   const [searchText, setSearchText] = useState('');
   const navigation = useNavigation();
 
   const handleResultPress = (item) => {
-    // Navigate to the details screen with the selected image data
     navigation.navigate('ImageDetailScreen', { imageData: item });
   };
 
   const renderResultItem = ({ item }) => (
     <TouchableOpacity onPress={() => handleResultPress(item)}>
-      <Text style={styles.resultItem}>{item.title}</Text>
+      <Text style={globalStyles.resultItem}>{item.title}</Text>
     </TouchableOpacity>
   );
 
   const filterResults = (text) => {
-    // Filter image data based on search text
     return imageData.filter((item) =>
       item.title.toLowerCase().includes(text.toLowerCase())
     );
   };
 
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <TextInput
         placeholder="Search..."
-        style={styles.input}
+        placeholderTextColor={colors.text}
+        style={globalStyles.input}
         autoFocus={true}
         onChangeText={(text) => setSearchText(text)}
-        placeholderTextColor="#aaa"
       />
       <FlatList
         data={filterResults(searchText)}
         renderItem={renderResultItem}
         keyExtractor={(item) => item.id.toString()}
-        style={styles.resultList}
+        style={globalStyles.resultList}
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#cfc0a7',
-    paddingHorizontal: 10,
-    paddingTop: 10,
-  },
-  input: {
-    height: 40,
-    borderColor: 'gray',
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    marginBottom: 10,
-    color: '#fff', // Set text color to white
-  },
-  resultItem: {
-    color: '#fff',
-    fontSize: 18,
-    marginBottom: 10,
-  },
-});
 
 export default SearchScreen;
