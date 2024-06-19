@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TextInput, FlatList, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import imageData from '../utils/imageData';
 import { globalStyles, colors } from '../styles/styles';
@@ -19,8 +19,11 @@ const SearchScreen = () => {
   );
 
   const filterResults = (text) => {
+    if (text === '') return [];
     return imageData.filter((item) =>
-      item.title.toLowerCase().includes(text.toLowerCase())
+      item.title.toLowerCase().includes(text.toLowerCase()) ||
+      item.artist.toLowerCase().includes(text.toLowerCase()) ||
+      item.keywords.some(keyword => keyword.toLowerCase().includes(text.toLowerCase()))
     );
   };
 
@@ -32,6 +35,7 @@ const SearchScreen = () => {
         style={globalStyles.input}
         autoFocus={true}
         onChangeText={(text) => setSearchText(text)}
+        value={searchText} // Ensure TextInput is controlled
       />
       <FlatList
         data={filterResults(searchText)}
