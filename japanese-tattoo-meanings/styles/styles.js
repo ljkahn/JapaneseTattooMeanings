@@ -17,6 +17,7 @@ export const globalStyles = StyleSheet.create({
   },
   text: {
     color: colors.text,
+    fontFamily: 'PlayfairDisplay-Regular',
   },
   header: {
     backgroundColor: colors.header,
@@ -25,6 +26,7 @@ export const globalStyles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: colors.buttonText,
+    fontFamily: 'PlayfairDisplay-Regular',
   },
   button: {
     backgroundColor: colors.accent,
@@ -36,6 +38,7 @@ export const globalStyles = StyleSheet.create({
   buttonText: {
     color: colors.buttonText,
     fontSize: 18,
+    fontFamily: 'PlayfairDisplay-Regular',
   },
   categoryButton: {
     backgroundColor: colors.accent,
@@ -49,6 +52,7 @@ export const globalStyles = StyleSheet.create({
     color: colors.buttonText,
     fontSize: 16,
     fontWeight: 'bold',
+    fontFamily: 'PlayfairDisplay-Regular',
   },
   image: {
     width: '100%',
@@ -60,5 +64,6 @@ export const globalStyles = StyleSheet.create({
   detailText: {
     fontSize: 16,
     marginVertical: 5,
+    fontFamily: 'PlayfairDisplay-Regular',
   },
 });
