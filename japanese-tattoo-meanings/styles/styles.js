@@ -47,7 +47,7 @@ export const globalStyles = StyleSheet.create({
   },
   categoryButtonText: {
     color: colors.buttonText,
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   image: {
