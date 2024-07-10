@@ -3,7 +3,7 @@ import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react
 import { useNavigation } from '@react-navigation/native';
 import { globalStyles, colors } from '../styles/styles';
 
-
+// list of deities data
 const deitiesData = [
   {
     id: 1,
@@ -159,7 +159,6 @@ const deitiesData = [
     pairings: "Flowers, Wild Beasts",
   },
 ];
-
 
 function DeitiesScreen() {
   const navigation = useNavigation();

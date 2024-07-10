@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, ImageBackground, Dimensions } from 'react-native';
 import { globalStyles, colors } from '../styles/styles';
 
+// list of background images for the category screen
 const images = [
   require('../assets/backgroundImages/crane1.jpeg'),
   require('../assets/backgroundImages/ebisu1.jpeg'),
@@ -11,6 +12,7 @@ const images = [
   require('../assets/backgroundImages/rokuro1.jpeg'),
 ];
 
+// list of categories for navigation
 const categories = [
   { id: 1, name: 'Deities', screen: 'DeitiesScreen' },
   { id: 2, name: 'Fauna', screen: 'FaunaScreen' },
@@ -21,15 +23,18 @@ const categories = [
 ];
 
 function CategoryScreen({ navigation }) {
+  // state to handle image index
   const [imageIndex, setImageIndex] = React.useState(0);
 
+  // effect to handle image change every 3 seconds
   React.useEffect(() => {
     const intervalId = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000); // change image every 3 seconds
     return () => clearInterval(intervalId);
   }, []);
 
+  // function to render each category item
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.categoryButton}
@@ -49,11 +54,11 @@ function CategoryScreen({ navigation }) {
     >
       <View style={styles.overlay}>
         <FlatList
-          key={numColumns} // Change the key prop to force a fresh render
+          key={numColumns} // change the key prop to force a fresh render
           data={categories}
           renderItem={renderItem}
           keyExtractor={(item) => item.id.toString()}
-          numColumns={numColumns} // Set the number of columns
+          numColumns={numColumns} // set the number of columns
           contentContainerStyle={styles.list}
         />
       </View>
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // This will create a dark overlay
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // this will create a dark overlay
     width: '100%',
     height: '100%',
   },
@@ -87,8 +92,8 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 10,
     borderRadius: 10,
-    width: Dimensions.get('window').width / 2.5, // Adjust width for two columns
-    height: Dimensions.get('window').width / 2.5, // Make buttons square
+    width: Dimensions.get('window').width / 2.5, // adjust width for two columns
+    height: Dimensions.get('window').width / 2.5, // make buttons square
     alignItems: 'center',
     justifyContent: 'center',
   },

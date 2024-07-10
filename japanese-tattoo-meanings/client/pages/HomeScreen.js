@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
 import { globalStyles, colors } from '../styles/styles';
 
+// list of background images for the home screen
 const images = [
   require('../assets/backgroundImages/crane1.jpeg'),
   require('../assets/backgroundImages/ebisu1.jpeg'),
@@ -12,12 +13,14 @@ const images = [
 ];
 
 function HomeScreen({ navigation }) {
+  // state to handle image index
   const [imageIndex, setImageIndex] = React.useState(0);
 
+  // effect to handle image change every 3 seconds
   React.useEffect(() => {
     const intervalId = setInterval(() => {
       setImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000); // change image every 3 seconds
     return () => clearInterval(intervalId);
   }, []);
 
@@ -38,6 +41,16 @@ function HomeScreen({ navigation }) {
           <TouchableOpacity style={styles.squareButton} onPress={() => navigation.navigate('SearchScreen')}>
             <Text style={styles.buttonText}>Search</Text>
           </TouchableOpacity>
+        </View>
+        <View style={styles.buttonRow}>
+          <TouchableOpacity 
+          style={styles.squareButton} 
+          onPress={() => navigation.navigate('SuggestionScreen')}>
+            <Text style={styles.buttonText}>Suggestions</Text>
+          </TouchableOpacity>
+          {/* <TouchableOpacity style={styles.squareButton} onPress={() => navigation.navigate('ChatbotScreen')}>
+            <Text style={styles.buttonText}>Chatbot</Text>
+          </TouchableOpacity> */}
         </View>
         <TouchableOpacity style={styles.rectangleButton} onPress={() => navigation.navigate('AboutScreen')}>
           <Text style={styles.buttonText}>About</Text>
@@ -60,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // This will create a dark overlay
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // this will create a dark overlay
     width: '100%',
     height: '100%',
   },
@@ -83,7 +96,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-    height: 100, // Make the buttons square
+    height: 100, // make the buttons square
+    opacity: 0.7,
   },
   rectangleButton: {
     backgroundColor: colors.accent,
@@ -93,6 +107,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '80%',
+    opacity: 0.7,
   },
   buttonText: {
     color: colors.buttonText,

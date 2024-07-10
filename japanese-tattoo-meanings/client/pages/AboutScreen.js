@@ -5,7 +5,7 @@ function HistoryScreen() {
   return (
     <View style={styles.container}> 
       <Text style={styles.text}>History Screen</Text>
-      {/* Add your history screen content here */}
+    
     </View>
   );
 }

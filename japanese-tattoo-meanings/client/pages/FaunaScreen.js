@@ -1,40 +1,30 @@
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import {useNavigation} from '@react-navigation/native';
+import React from 'react';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { globalStyles, colors } from '../styles/styles';
 
-
-
+// list of fauna data
 const faunaData = [
-      {
+  {
     id: 18,
     category: "Fauna",
-    imageUri:require("../assets/fauna/carp.webp"),
+    imageUri: require("../assets/fauna/carp.webp"),
     title: "Carp",
     artist: "Utagawa Toyokuni",
     tattooBackgrounds: "Water",
     pairings: "Dragon (Ryū), Flowers, Goldfish (Kingyo)",
-    history:"jafdafndjskanfdksj",
+    history: "jafdafndjskanfdksj",
   },
-  //   {
-  //   id: 19,
-  //   category: "Fauna",
-    // imageUri:require("../assets/deities/luckyGods.jpeg"),
-  //   title: "",
-  //   artist: "",
-  //   tattooBackgrounds: "",
-  //   pairings: "",
-  // },
-    {
+  {
     id: 20,
     category: "Fauna",
-    imageUri:require("../assets/fauna/crane.jpeg"),
+    imageUri: require("../assets/fauna/crane.jpeg"),
     title: "Crane",
-    artist: "Utagawa Hiroshige ",
+    artist: "Utagawa Hiroshige",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: "Flowers, Lucky Charms",
   },
-    {
+  {
     id: 21,
     category: "Fauna",
     imageUri: require("../assets/fauna/fox.webp"),
@@ -46,41 +36,42 @@ const faunaData = [
   {
     id: 23,
     category: "Fauna",
-    imageUri:require("../assets/fauna/goldfish.jpeg"),
+    imageUri: require("../assets/fauna/goldfish.jpeg"),
     title: "Goldfish",
     artist: "Ohara Koson",
     tattooBackgrounds: "Water",
     pairings: "Carp (Koi), Flowers, Freshwater Elements, Lucky Charms",
   },
-    {
+  {
     id: 24,
     category: "Fauna",
-    imageUri:require("../assets/fauna/hawk.jpg"),
+    imageUri: require("../assets/fauna/hawk.jpg"),
     title: "Hawk",
     artist: "Eisen Keisai",
     tattooBackgrounds: "Clouds",
     pairings: "Camellias (Tsubaki), Flowers, Pine Trees (Matsu), Snake (Hebi), Warriors",
   },
-    {
+  {
     id: 25,
     category: "Fauna",
-    imageUri:require("../assets/fauna/snake.jpeg"),
+    imageUri: require("../assets/fauna/snake.jpeg"),
     title: "Snake",
     artist: "Utagawa Kuniyoshi",
     tattooBackgrounds: "Clouds, Stone, Water",
     pairings: " Flowers, Hakamadare, Hannya, Kintarō, Orochimaru, Saginoike Heikurō",
-    note: "Snakes can be paired with many elements beyond the brief listing above."
+    note: "Snakes can be paired with many elements beyond the brief listing above.",
   },
-    {
+  {
     id: 26,
     category: "Fauna",
-    imageUri:require("../assets/fauna/tiger.jpeg"),
+    imageUri: require("../assets/fauna/tiger.jpeg"),
     title: "Tiger",
     artist: "Ohara Koson",
     tattooBackgrounds: "Clouds, Lightening, Stone, Water",
     pairings: "Bamboo (Take), Demons (Oni), Dragon (Ryū), Flowers, Gyōja Bushō, Shoki",
   },
-]
+];
+
 function FaunaScreen() {
   const navigation = useNavigation();
 
@@ -97,8 +88,7 @@ function FaunaScreen() {
 
   return (
     <FlatList
-      data={faunaData
-      }
+      data={faunaData}
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
       numColumns={2}
