@@ -1,0 +1,36 @@
+build an r,p,s game
+what are the rules of this game??
+r beats S
+s beats R
+p beats R
+
+
+what data do i need to track in this app?
+
+
+variables - userChoice, computerChoice
+(purpose of variables (purpose of user choice and computer choice variables is to check if user won, loss or tied - if statement) is to check if user won, loss, or tie - ***if statement***)
+
+play again (store true or false)
+need to cherck the userChoice vs the computerChoice to determine how to update 
+
+increment variables by 1? i++
+
+wins ++ losses 
+++
+ties ++
+
+
+when user choices a choice i need the computers random choice then compare the two choices to determine who won and update the value of the variables accordinyl 
+
+how do i choose a random value for the computer?
+
+determining who wins --> if statement
+
+choose one path either user or computer
+
+if you know a user chose something - you can decide if they win
+
+compare users choice against random computer
+math.floor
+math.random

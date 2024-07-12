@@ -1,0 +1,62 @@
+* {
+    background-color: lavenderblush;
+}
+
+
+:root {
+    --tan: rgb(207, 185, 128);
+    
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    color: lightskyblue;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-style: dashed;
+    display: block;
+    width: 100%;
+
+}
+
+section h1 {
+    border: solid black 1px;
+    border-radius: 10px;
+}
+
+code {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    flex-wrap: wrap;
+    box-shadow: inset 0px 0px 0px 12px pink;
+    align-items: center;
+}
+
+.card-header {
+    position:relative;
+    margin-top: -20px;
+}
+
+
+footer {
+    text-align: center;
+}
