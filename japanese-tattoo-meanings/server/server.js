@@ -1,12 +1,91 @@
 require('dotenv').config();
 const express = require('express');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const { ApolloServer, gql } = require('apollo-server-express');
 const { getOpenAiResponse } = require('../client/utils/openAi');
+const User = require('./models/User');
+const authMiddleware = require('./middleware/auth');
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
 
+// Apollo Server setup for GraphQL
+const typeDefs = gql`
+  type User {
+    id: ID!
+    username: String!
+    role: String!
+  }
+
+  type Query {
+    me: User
+  }
+
+  type Mutation {
+    register(username: String!, password: String!, role: String!, coordinates: [Float!]!): String
+    login(username: String!, password: String!): String
+  }
+`;
+
+const resolvers = {
+  Query: {
+    me: async (_, __, { user }) => {
+      if (!user) throw new Error('You are not authenticated!');
+      return await User.findById(user.id);
+    },
+  },
+  Mutation: {
+    register: async (_, { username, password, role, coordinates }) => {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      const newUser = new User({
+        username,
+        password: hashedPassword,
+        role,
+        location: { type: 'Point', coordinates }
+      });
+      await newUser.save();
+      return 'User registered successfully';
+    },
+    login: async (_, { username, password }) => {
+      const user = await User.findOne({ username });
+      if (!user) throw new Error('Invalid credentials');
+
+      const isValid = await bcrypt.compare(password, user.password);
+      if (!isValid) throw new Error('Invalid credentials');
+
+      const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, {
+        expiresIn: '1h',
+      });
+      return token;
+    },
+  },
+};
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => {
+    const token = req.headers.authorization || '';
+    if (token) {
+      try {
+        const user = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+        return { user };
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    return {};
+  },
+});
+
+await server.start();
+server.applyMiddleware({ app });
+
+// Suggest endpoint
 app.post('/suggest', async (req, res) => {
   const { theme } = req.body;
 
@@ -36,6 +115,7 @@ app.post('/suggest', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`server running at http://localhost:${port}`);
-});
+// Connect to MongoDB and start server
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(port, () => console.log(`server running at http://localhost:${port}${server.graphqlPath}`)))
+  .catch(err => console.error(err));
