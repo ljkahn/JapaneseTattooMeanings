@@ -1,0 +1,13 @@
+{
+  "name": "Contact",
+  "scripts": {
+    "dev": "",
+    "build": "",
+    "start": ""
+  },
+  "author": "2U",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7"
+  }
+}
