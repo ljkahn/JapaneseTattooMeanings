@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://mongo:27017/tattooApp');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://mongo:27017/japanese-tattoo-meanings');
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose is connected');
