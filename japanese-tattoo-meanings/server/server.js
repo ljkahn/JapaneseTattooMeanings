@@ -25,7 +25,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    register(username: String!, password: String!, role: String!, coordinates: [Float!]!): String
+    register(username: String!, password: String!, role: String!): String
     login(username: String!, password: String!): String
   }
 `;
@@ -38,13 +38,12 @@ const resolvers = {
     },
   },
   Mutation: {
-    register: async (_, { username, password, role, coordinates }) => {
+    register: async (_, { username, password, role }) => {
       const hashedPassword = await bcrypt.hash(password, 10);
       const newUser = new User({
         username,
         password: hashedPassword,
         role,
-        location: { type: 'Point', coordinates }
       });
       await newUser.save();
       return 'User registered successfully';
@@ -116,7 +115,7 @@ const startServer = async () => {
   });
 
   // Debugging line to check if the environment variables are loaded correctly
-  console.log('MONGODB_URI:', process.env.MONGODB_URI);
+  console.log('MONGO_URI:', process.env.MONGODB_URI);
   console.log('JWT_SECRET:', process.env.JWT_SECRET);
 
   // Connect to MongoDB and start server
