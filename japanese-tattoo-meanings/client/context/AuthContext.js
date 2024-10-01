@@ -1,33 +1,45 @@
+// context/AuthContext.js
 import React, { createContext, useState, useEffect } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import axios from 'axios';
 
+// create the context
 export const AuthContext = createContext();
 
+// create a provider component
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userToken, setUserToken] = useState(null);
 
-  useEffect(() => {
-    const loadUser = async () => {
-      const storedUser = await AsyncStorage.getItem('user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
+  const login = async (username, password) => {
+    try {
+      const response = await axios.post('http://localhost:4001/graphql', {
+        query: `
+          mutation {
+            login(username: "${username}", password: "${password}")
+          }
+        `,
+      });
+
+      const token = response.data.data.login;
+      if (token) {
+        setUserToken(token);
+        setIsLoggedIn(true);
+      } else {
+        alert('Login failed');
       }
-    };
-    loadUser();
-  }, []);
-
-  const login = async (userData) => {
-    setUser(userData);
-    await AsyncStorage.setItem('user', JSON.stringify(userData));
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('Error logging in');
+    }
   };
 
-  const logout = async () => {
-    setUser(null);
-    await AsyncStorage.removeItem('user');
+  const logout = () => {
+    setUserToken(null);
+    setIsLoggedIn(false);
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, userToken, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

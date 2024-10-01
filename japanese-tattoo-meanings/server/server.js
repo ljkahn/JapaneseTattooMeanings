@@ -5,70 +5,73 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const { ApolloServer, gql } = require('apollo-server-express');
-const Artist = require('./models/Artist');
-const authMiddleware = require('./utils/auth');
+const User = require('./models/User');
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 4001;
 
 app.use(express.json());
 
 const typeDefs = gql`
-  type Artist {
+  type User {
     id: ID!
     username: String!
     bio: String
     website: String
     images: [String]
+    location: String
+    style: String
+    price: Float
   }
 
   type Query {
-    me: Artist
+    me: User
   }
 
   type Mutation {
     register(username: String!, password: String!): String
     login(username: String!, password: String!): String
-    updateProfile(bio: String, website: String, images: [String]): Artist
+    updateProfile(bio: String, website: String, images: [String], location: String, style: String, price: Float): User
   }
 `;
 
 const resolvers = {
   Query: {
-    me: async (_, __, { artist }) => {
-      if (!artist) throw new Error('You are not authenticated!');
-      return await Artist.findById(artist.id);
+    me: async (_, __, { user }) => {
+      if (!user) throw new Error('You are not authenticated!');
+      return await User.findById(user.id);
     },
   },
   Mutation: {
     register: async (_, { username, password }) => {
       const hashedPassword = await bcrypt.hash(password, 10);
-      const newArtist = new Artist({ username, password: hashedPassword });
-      await newArtist.save();
-      return 'Artist registered successfully';
+      const newUser = new User({ username, password: hashedPassword });
+      await newUser.save();
+      return 'User registered successfully';
     },
     login: async (_, { username, password }) => {
-      const artist = await Artist.findOne({ username });
-      if (!artist) throw new Error('Invalid credentials');
+      const user = await User.findOne({ username });
+      if (!user) throw new Error('Invalid credentials');
 
-      const isValid = await bcrypt.compare(password, artist.password);
+      const isValid = await bcrypt.compare(password, user.password);
       if (!isValid) throw new Error('Invalid credentials');
 
-      const token = jwt.sign({ id: artist._id }, process.env.JWT_SECRET, {
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: '1h',
       });
+      console.log(token)
       return token;
     },
-    updateProfile: async (_, { bio, website, images }, { artist }) => {
-      if (!artist) throw new Error('You are not authenticated!');
-      const updatedArtist = await Artist.findByIdAndUpdate(
-        artist.id,
-        { profile: { bio, website, images } },
+    updateProfile: async (_, { bio, website, images, location, style, price }, { user }) => {
+      if (!user) throw new Error('You are not authenticated!');
+      const updatedUser = await User.findByIdAndUpdate(
+        user.id,
+        { bio, website, images, location, style, price },
         { new: true }
       );
-      return updatedArtist;
-    }
-  }
+      return updatedUser;
+    },
+  },
 };
 
 const startServer = async () => {
@@ -76,27 +79,29 @@ const startServer = async () => {
     typeDefs,
     resolvers,
     context: ({ req }) => {
-      const token = req.headers.authorization || '';
-      if (token) {
-        try {
-          const artist = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
-          return { artist };
-        } catch (err) {
-          console.error(err);
-        }
+    const token = req.headers.authorization || '';
+    if (token) {
+      try {
+        // Ensure to split 'Bearer ' from token
+        console.log('Token:', token); // After obtaining the token
+        const artist = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+
+
+        return { artist };
+      } catch (err) {
+        console.error(err);
+        throw new Error('Invalid token');
       }
-      return {};
-    },
+    }
+    return {};
+  },
   });
 
   await server.start();
   server.applyMiddleware({ app });
 
-  console.log('MONGO_URI:', process.env.MONGODB_URI);
-  console.log('JWT_SECRET:', process.env.JWT_SECRET);
-
   mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => app.listen(port, () => console.log(`server running at http://localhost:${port}${server.graphqlPath}`)))
+    .then(() => app.listen(port, () => console.log(`Server running at http://localhost:${port}${server.graphqlPath}`)))
     .catch(err => console.error(err));
 };
 

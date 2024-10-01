@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
-    "start-client": "cd client && npm start",
+    "start-client": "cd client && npx expo start",
     "start-server": "cd server && npm start"
   },
   "dependencies": {
