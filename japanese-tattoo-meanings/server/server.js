@@ -59,18 +59,27 @@ const resolvers = {
       const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: '1h',
       });
-      console.log(token)
+      console.log('Generated token:', token);
       return token;
     },
-    updateProfile: async (_, { bio, website, images, location, style, price }, { user }) => {
-      if (!user) throw new Error('You are not authenticated!');
-      const updatedUser = await User.findByIdAndUpdate(
-        user.id,
-        { bio, website, images, location, style, price },
-        { new: true }
-      );
-      return updatedUser;
-    },
+updateProfile: async (_, { bio, website, location, style, price }, { user }) => {
+  if (!user) {
+    console.log('User is not authenticated!');
+    throw new Error('You are not authenticated!');
+  }
+  
+  console.log('Received profile update data:', { bio, website, location, style, price });
+
+  const updatedUser = await User.findByIdAndUpdate(
+    user.id,
+    { bio, website, location, style, price },
+    { new: true }
+  );
+
+  console.log('Updated user:', updatedUser);
+
+  return updatedUser;
+},
   },
 };
 
@@ -79,22 +88,21 @@ const startServer = async () => {
     typeDefs,
     resolvers,
     context: ({ req }) => {
-    const token = req.headers.authorization || '';
-    if (token) {
-      try {
-        // Ensure to split 'Bearer ' from token
-        console.log('Token:', token); // After obtaining the token
-        const artist = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
-
-
-        return { artist };
-      } catch (err) {
-        console.error(err);
-        throw new Error('Invalid token');
+      const token = req.headers.authorization || '';
+      if (token) {
+        try {
+          // Log the token and decode it
+          console.log('Token received:', token);
+          const decoded = jwt.verify(token.split(' ')[1], process.env.JWT_SECRET);
+          console.log('Decoded user:', decoded);
+          return { user: decoded };  // Pass the decoded token as the `user` object in context
+        } catch (err) {
+          console.error('Invalid token:', err);
+          throw new Error('Invalid token');
+        }
       }
-    }
-    return {};
-  },
+      return {};  // Return an empty object if no token is provided
+    },
   });
 
   await server.start();

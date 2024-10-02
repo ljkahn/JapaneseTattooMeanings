@@ -1,14 +1,12 @@
-// Corrected typeDefs
 const typeDefs = gql`
   type User {
     id: ID!
     username: String!
-    name: String
-    location: String
-    tattooStyle: String
-    price: Float
     bio: String
     website: String
+    location: String
+    style: String
+    price: Float
   }
 
   type Query {
@@ -19,12 +17,11 @@ const typeDefs = gql`
     register(username: String!, password: String!): String
     login(username: String!, password: String!): String
     updateProfile(
-      name: String,
-      location: String,
-      tattooStyle: String,
-      price: Float,
-      bio: String,
+      bio: String
       website: String
+      location: String
+      style: String
+      price: Float
     ): User
   }
 `;

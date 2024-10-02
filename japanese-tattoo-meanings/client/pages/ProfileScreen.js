@@ -1,5 +1,4 @@
-// pages/ProfileScreen.js
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, TextInput, Button, Alert, StyleSheet } from 'react-native';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
@@ -8,9 +7,11 @@ const ProfileScreen = ({ navigation }) => {
   const { logout, userToken } = useContext(AuthContext);
 
   const [name, setName] = useState('');
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState(''); // Users can manually enter their location
   const [tattooStyle, setTattooStyle] = useState('');
   const [price, setPrice] = useState('');
+  const [bio, setBio] = useState('')
+  const [website, setWebsite] =useState ('');
 
 const handleUpdateProfile = async () => {
   try {
@@ -20,19 +21,17 @@ const handleUpdateProfile = async () => {
         query: `
           mutation {
             updateProfile(
-              name: "${name}",
+              bio: "${bio}",
+              website: "${website}",
               location: "${location}",
-              tattooStyle: "${tattooStyle}",
-              price: ${price || 0},
-              profilePicture: "${profilePicture}",
-              portfolioImages: ${JSON.stringify(portfolioImages)}
+              style: "${tattooStyle}",
+              price: ${parseFloat(price)}
             ) {
-              name
+              bio
+              website
               location
-              tattooStyle
+              style
               price
-              profilePicture
-              portfolioImages
             }
           }
         `,
@@ -44,6 +43,8 @@ const handleUpdateProfile = async () => {
       }
     );
 
+    console.log('Response data:', response.data);
+
     const updatedProfile = response.data.data.updateProfile;
     if (updatedProfile) {
       Alert.alert('Profile updated successfully');
@@ -51,42 +52,22 @@ const handleUpdateProfile = async () => {
       Alert.alert('Profile update failed');
     }
   } catch (error) {
-    console.error('Error updating profile:', error);
+    console.error('Error updating profile:', error.response?.data || error.message);
     Alert.alert('Error updating profile');
   }
 };
 
 
 
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Profile</Text>
-      <TextInput
-        placeholder="Name"
-        value={name}
-        onChangeText={setName}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Location"
-        value={location}
-        onChangeText={setLocation}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Tattoo Style"
-        value={tattooStyle}
-        onChangeText={setTattooStyle}
-        style={styles.input}
-      />
-      <TextInput
-        placeholder="Price"
-        value={price}
-        onChangeText={setPrice}
-        keyboardType="numeric"
-        style={styles.input}
-      />
+      <TextInput placeholder="Name" value={name} onChangeText={setName} style={styles.input} />
+      <TextInput placeholder="Location" value={location} onChangeText={setLocation} style={styles.input} />
+       <TextInput placeholder="Bio" value={bio} onChangeText={setBio} style={styles.input} />
+      <TextInput placeholder="Tattoo Style" value={tattooStyle} onChangeText={setTattooStyle} style={styles.input} />
+        <TextInput placeholder="Website" value={website} onChangeText={setWebsite} style={styles.input} />
+      <TextInput placeholder="Price" value={price} onChangeText={setPrice} keyboardType="numeric" style={styles.input} />
       <Button title="Update Profile" onPress={handleUpdateProfile} />
       <Button title="Logout" onPress={logout} />
     </View>

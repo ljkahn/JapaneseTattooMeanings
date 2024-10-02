@@ -1,4 +1,3 @@
-// schema.js
 const typeDefs = gql`
   type User {
     id: ID!
@@ -7,7 +6,6 @@ const typeDefs = gql`
     location: String
     tattooStyle: String
     price: Float
-    profilePicture: String
     portfolioImages: [String]
   }
 
@@ -23,7 +21,6 @@ const typeDefs = gql`
       location: String
       tattooStyle: String
       price: Float
-      profilePicture: String
       portfolioImages: [String]
     ): User
   }
@@ -37,14 +34,18 @@ const resolvers = {
     },
   },
   Mutation: {
-    updateProfile: async (_, { name, location, tattooStyle, price, profilePicture, portfolioImages }, { user }) => {
+    updateProfile: async (_, { bio, website, location, style, price }, { user }) => {
       if (!user) throw new Error('You are not authenticated!');
+
       const updatedUser = await User.findByIdAndUpdate(
         user.id,
-        { name, location, tattooStyle, price, profilePicture, portfolioImages },
+        { bio, website, location, style, price },
         { new: true }
       );
+
       return updatedUser;
     },
   },
 };
+
+module.exports = { typeDefs, resolvers };
