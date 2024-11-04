@@ -13,6 +13,9 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   const { userToken } = useContext(AuthContext);
 
+  // Debugging/logging token value
+  console.log("User token value:", userToken);
+
   return (
     <Stack.Navigator>
       {/* Home screen is accessible without authentication */}
@@ -22,18 +25,16 @@ const AppNavigator = () => {
         options={{ headerShown: false }} 
       />
       
-      {/* Authenticated Screens */}
+      {/* If the user is authenticated, show ProfileScreen */}
       {userToken ? (
-        <>
-          <Stack.Screen 
-            name="ProfileScreen" 
-            component={ProfileScreen} 
-            options={{ title: 'Profile' }} 
-          />
-        </>
+        <Stack.Screen 
+          name="ProfileScreen" 
+          component={ProfileScreen} 
+          options={{ title: 'Profile' }} 
+        />
       ) : (
+        // If the user is not authenticated, show Login/Register screens
         <>
-          {/* Non-authenticated Screens */}
           <Stack.Screen 
             name="LoginScreen" 
             component={LoginScreen} 
