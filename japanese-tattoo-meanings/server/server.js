@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const { ApolloServer, gql } = require('apollo-server-express');
 const User = require('./models/User');
+const uploadRoutes = require('./routes/uploads');
+app.use('/api/uploads', uploadRoutes);
 
 const app = express();
 const port = process.env.PORT || 4001;
