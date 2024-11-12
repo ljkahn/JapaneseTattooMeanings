@@ -1,50 +1,67 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text, StyleSheet, ScrollView } from 'react-native';
-import { getSuggestions } from '../utils/api';
-import { globalStyles, colors } from '../styles/styles';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { getSuggestions } from '../utils/openAi'; // Ensure this path is correct
 
 const SuggestionScreen = () => {
-  const [theme, setTheme] = useState('');
-  const [suggestions, setSuggestions] = useState('');
+  const [prompt, setPrompt] = useState('');
+  const [suggestion, setSuggestion] = useState('');
 
   const handleGetSuggestions = async () => {
+    if (!prompt) {
+      Alert.alert('Please enter a prompt');
+      return;
+    }
     try {
-      const result = await getSuggestions(theme);
-      setSuggestions(result);
+      const suggestionText = await getSuggestions(prompt);
+      setSuggestion(suggestionText);
     } catch (error) {
       console.error('Error fetching suggestions:', error);
+      Alert.alert('Error fetching suggestions', 'Please try again later');
     }
   };
 
   return (
-    <View style={globalStyles.container}>
+    <View style={styles.container}>
+      <Text style={styles.title}>Tattoo Idea Generator</Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter theme"
-        value={theme}
-        onChangeText={setTheme}
+        placeholder="Enter prompt for tattoo ideas"
+        value={prompt}
+        onChangeText={setPrompt}
       />
-      <TouchableOpacity style={globalStyles.button} onPress={handleGetSuggestions}>
-        <Text style={globalStyles.buttonText}>Get Suggestions</Text>
-      </TouchableOpacity>
-      <ScrollView style={styles.suggestionsContainer}>
-        <Text style={globalStyles.text}>{suggestions}</Text>
-      </ScrollView>
+      <Button title="Get Suggestions" onPress={handleGetSuggestions} />
+      {suggestion ? (
+        <Text style={styles.suggestion}>Suggestion: {suggestion}</Text>
+      ) : null}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    borderWidth: 1,
-    borderColor: colors.text,
-    padding: 10,
-    marginVertical: 10,
-    borderRadius: 5,
+  container: {
+    flex: 1,
+    padding: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f8f8f8', // Adjust based on your app's theme
   },
-  suggestionsContainer: {
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  input: {
+    width: '100%',
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    marginBottom: 20,
+  },
+  suggestion: {
     marginTop: 20,
-    maxHeight: '70%',
+    fontSize: 16,
+    fontStyle: 'italic',
   },
 });
 

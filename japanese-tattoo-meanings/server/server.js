@@ -1,5 +1,6 @@
 // server.js
 require('dotenv').config();
+console.log('OpenAI API Key:', process.env.OPENAI_API_KEY); // Add this line to check the API key
 const express = require('express');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

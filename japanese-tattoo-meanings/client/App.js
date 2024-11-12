@@ -7,14 +7,14 @@ import HomeScreen from './pages/HomeScreen';
 import LoginScreen from './pages/LoginScreen';
 import RegisterScreen from './pages/RegisterScreen';
 import ProfileScreen from './pages/ProfileScreen';
+import SearchScreen from './pages/SearchScreen';
+import CategoryScreen from './pages/CategoryScreen';
+import SuggestionScreen from './pages/SuggestionScreen'; // Import SuggestionScreen
 
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   const { userToken } = useContext(AuthContext);
-
-  // Debugging/logging token value
-  console.log("User token value:", userToken);
 
   return (
     <Stack.Navigator>
@@ -25,16 +25,35 @@ const AppNavigator = () => {
         options={{ headerShown: false }} 
       />
       
-      {/* If the user is authenticated, show ProfileScreen */}
+      {/* Add additional screens to the stack */}
+      <Stack.Screen 
+        name="CategoryScreen" 
+        component={CategoryScreen} 
+        options={{ title: 'Categories' }}
+      />
+      <Stack.Screen 
+        name="SearchScreen" 
+        component={SearchScreen} 
+        options={{ title: 'Search' }}
+      />
+      <Stack.Screen 
+        name="SuggestionScreen" 
+        component={SuggestionScreen} 
+        options={{ title: 'Suggestions' }}
+      />
+
+      {/* Authenticated Screens */}
       {userToken ? (
-        <Stack.Screen 
-          name="ProfileScreen" 
-          component={ProfileScreen} 
-          options={{ title: 'Profile' }} 
-        />
-      ) : (
-        // If the user is not authenticated, show Login/Register screens
         <>
+          <Stack.Screen 
+            name="ProfileScreen" 
+            component={ProfileScreen} 
+            options={{ title: 'Profile' }} 
+          />
+        </>
+      ) : (
+        <>
+          {/* Non-authenticated Screens */}
           <Stack.Screen 
             name="LoginScreen" 
             component={LoginScreen} 

@@ -47,9 +47,9 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.buttonText}>Suggestions</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.rectangleButton} onPress={() => navigation.navigate('AboutScreen')}>
+        {/* <TouchableOpacity style={styles.rectangleButton} onPress={() => navigation.navigate('AboutScreen')}>
           <Text style={styles.buttonText}>About</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
         {isLoggedIn ? (
           <View style={styles.topRightButtons}>

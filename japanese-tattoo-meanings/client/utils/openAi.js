@@ -1,39 +1,51 @@
-const axios = require('axios');
+import axios from 'axios';
+import { OPENAI_API_KEY } from '@env';
+
+console.log('API Key from @env:', OPENAI_API_KEY); // Check if API key is being read
 
 async function getOpenAiResponse(prompt) {
+  if (!OPENAI_API_KEY) {
+    throw new Error('API key is undefined. Please check your .env configuration.');
+  }
+
   try {
-    console.log('sending request to openai with prompt:', prompt);
+    console.log('Sending request to OpenAI with prompt:', prompt);
+
     const response = await axios.post(
       'https://api.openai.com/v1/chat/completions',
       {
         model: 'gpt-3.5-turbo',
         messages: [
-          { role: 'system', content: 'you are a knowledgeable assistant for a japanese tattoo meanings app.' },
-          { role: 'user', content: prompt }
+          {
+            role: 'system',
+            content: 'You are a knowledgeable assistant for a Japanese tattoo meanings app focusing on deities, fauna, flora, folklore, suikoden, and supernatural icons.',
+          },
+          { role: 'user', content: prompt },
         ],
-        max_tokens: 1500,
+        max_tokens: 150,
       },
       {
         headers: {
-          'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
           'Content-Type': 'application/json',
         },
       }
     );
-    console.log('received response from openai:', response.data);
+
+    console.log('OpenAI Response:', response.data);
     return response.data.choices[0].message.content.trim();
   } catch (error) {
     if (error.response) {
-      console.error('error response data:', error.response.data);
-      console.error('error response status:', error.response.status);
-      console.error('error response headers:', error.response.headers);
+      console.error('Error response data:', error.response.data);
     } else if (error.request) {
-      console.error('error request data:', error.request);
+      console.error('Error request data:', error.request);
     } else {
-      console.error('general error message:', error.message);
+      console.error('Error message:', error.message);
     }
     throw error;
   }
 }
 
-module.exports = { getOpenAiResponse };
+export async function getSuggestions(prompt) {
+  return await getOpenAiResponse(prompt);
+}
