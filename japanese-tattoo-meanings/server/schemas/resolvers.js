@@ -46,6 +46,12 @@ const resolvers = {
       return updatedUser;
     },
   },
+
+  //   addProfileImage: async (_, { image }, { user }) => {
+  //     if (!user) throw new Error('You are not authenticated!');
+
+  //     const updatedUser = await User.findByIdAndUpdate( user.id, { $push: { portfolioImages: image } }, { new: true });
+  // },
 };
 
 module.exports = { typeDefs, resolvers };
