@@ -14,118 +14,14 @@ const ProfileScreen = ({ navigation }) => {
     style: '',
     price: '',
     bio: '',
-    website: '',
+    website: ''
   });
-
-  import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, ScrollView, Image } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import axios from 'axios';
-import { AuthContext } from '../context/AuthContext';
-import { colors, globalStyles } from '../styles/styles';
-
-const ProfileScreen = ({ navigation }) => {
-  const { userToken, logout } = useContext(AuthContext);
-  const [profile, setProfile] = useState(null);
-  const [imageUri, setImageUri] = useState('');
-
-  const handlePickImage = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      quality: 1,
-    });
-
-    if (!result.canceled) {
-      setImageUri(result.assets[0].uri);
-      await handleUploadImage(result.assets[0].uri);
-    }
-  };
-
-  const handleUploadImage = async (uri) => {
-    try {
-      const formData = new FormData();
-      formData.append('image', {
-        uri,
-        name: 'profile_image.jpg',
-        type: 'image/jpeg',
-      });
-
-      const response = await axios.post('http://localhost:4001/api/uploads', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-
-      if (response.data.success) {
-        const imageUrl = response.data.url;
-        Alert.alert('Image uploaded successfully', `Image URL: ${imageUrl}`);
-        console.log('Image URL:', imageUrl);
-      } else {
-        Alert.alert('Image upload failed', response.data.message);
-      }
-    } catch (error) {
-      console.error('Error uploading image:', error.message);
-      Alert.alert('Image upload error', 'Please try again later.');
-    }
-  };
-
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={[globalStyles.text, styles.title]}>Profile</Text>
-
-      <TouchableOpacity style={styles.button} onPress={handlePickImage}>
-        <Text style={styles.buttonText}>Upload Profile Image</Text>
-      </TouchableOpacity>
-
-      {imageUri ? <Image source={{ uri: imageUri }} style={styles.image} /> : null}
-
-      <TouchableOpacity style={styles.button} onPress={logout}>
-        <Text style={styles.buttonText}>Logout</Text>
-      </TouchableOpacity>
-    </ScrollView>
-  );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: colors.text,
-    marginBottom: 20,
-    textAlign: 'center',
-  },
-  button: {
-    marginTop: 20,
-    paddingVertical: 15,
-    backgroundColor: colors.accent,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: colors.buttonText,
-    fontSize: 18,
-  },
-  image: {
-    width: '100%',
-    height: 200,
-    borderRadius: 10,
-    marginTop: 20,
-  },
-});
-
-export default ProfileScreen;
-
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        console.log('Fetching profile...');
         const response = await axios.post(
-          'http://localhost:4001/graphql', // Replace with your local IP address
+          'http://localhost:4001/graphql',
           {
             query: `
               query {
@@ -148,39 +44,33 @@ export default ProfileScreen;
           }
         );
 
-        console.log('Profile fetch response:', response.data);
-
         if (response.data.errors) {
           console.error('GraphQL errors:', response.data.errors);
           Alert.alert('Error fetching profile');
         } else {
           const profileData = response.data.data.me;
-          if (!profileData) {
-            console.error('Profile data is null');
-            Alert.alert('Profile not found', 'Please create a profile first.');
-            navigation.navigate('CreateProfileScreen'); // Redirect to create profile if data is null
-          } else {
-            setProfile(profileData);
-            setFormData({
-              username: profileData.username,
-              location: profileData.location,
-              style: profileData.style,
-              price: profileData.price ? profileData.price.toString() : '',
-              bio: profileData.bio,
-              website: profileData.website,
-            });
-          }
+          setProfile(profileData);
+          setFormData({
+            username: profileData.username,
+            location: profileData.location,
+            style: profileData.style,
+            price: profileData.price ? profileData.price.toString() : '',
+            bio: profileData.bio,
+            website: profileData.website,
+          });
         }
       } catch (error) {
-        console.error('Error fetching profile:', error.message);
-        Alert.alert('Error fetching profile', 'Please try again later.');
+        console.error('Error fetching profile:', error.response ? error.response.data : error);
+        Alert.alert('Error fetching profile');
       }
     };
 
     fetchProfile();
   }, [userToken]);
 
-  const handleEditToggle = () => setIsEditing(!isEditing);
+  const handleEditToggle = () => {
+    setIsEditing(!isEditing);
+  };
 
   const handleInputChange = (name, value) => {
     setFormData({ ...formData, [name]: value });
@@ -188,9 +78,8 @@ export default ProfileScreen;
 
   const handleSave = async () => {
     try {
-      console.log('Saving profile changes:', formData);
       const response = await axios.post(
-        'http://192.168.x.x:4001/graphql', // Replace with your local IP address
+        'http://localhost:4001/graphql',
         {
           query: `
             mutation {
@@ -219,8 +108,6 @@ export default ProfileScreen;
         }
       );
 
-      console.log('Profile update response:', response.data);
-
       if (response.data.errors) {
         console.error('Error updating profile:', response.data.errors);
         Alert.alert('Profile update failed');
@@ -230,8 +117,8 @@ export default ProfileScreen;
         Alert.alert('Profile updated successfully');
       }
     } catch (error) {
-      console.error('Error updating profile:', error.message);
-      Alert.alert('Error updating profile', 'Please try again later.');
+      console.error('Error updating profile:', error.response ? error.response.data : error);
+      Alert.alert('Error updating profile');
     }
   };
 
@@ -248,13 +135,13 @@ export default ProfileScreen;
       <Text style={[globalStyles.text, styles.title]}>Profile</Text>
 
       {isEditing ? (
-        <>
+        <> 
           <TextInput
             style={styles.input}
             placeholder="Location"
             value={formData.location}
             onChangeText={(text) => handleInputChange('location', text)}
-          />
+          /> 
           <TextInput
             style={styles.input}
             placeholder="Style"
@@ -287,12 +174,12 @@ export default ProfileScreen;
         </>
       ) : (
         <>
-          <Text style={styles.profileText}>Username: {profile?.username || 'N/A'}</Text>
-          <Text style={styles.profileText}>Location: {profile?.location || 'N/A'}</Text>
-          <Text style={styles.profileText}>Style: {profile?.style || 'N/A'}</Text>
-          <Text style={styles.profileText}>Price: ${profile?.price || 'N/A'}</Text>
-          <Text style={styles.profileText}>Bio: {profile?.bio || 'N/A'}</Text>
-          <Text style={styles.profileText}>Website: {profile?.website || 'N/A'}</Text>
+          <Text style={styles.profileText}>Username: {profile.username}</Text>
+          <Text style={styles.profileText}>Location: {profile.location}</Text>
+          <Text style={styles.profileText}>Style: {profile.style}</Text>
+          <Text style={styles.profileText}>Price: ${profile.price}</Text>
+          <Text style={styles.profileText}>Bio: {profile.bio}</Text>
+          <Text style={styles.profileText}>Website: {profile.website}</Text>
         </>
       )}
 
