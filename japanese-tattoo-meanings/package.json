@@ -17,6 +17,7 @@
     "@react-navigation/stack": "^6.3.25",
     "axios": "^0.26.1",
     "bcrypt": "^5.1.1",
+    "cloudinary": "^1.41.3",
     "concurrently": "^6.2.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -25,6 +26,8 @@
     "expo-status-bar": "~1.11.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "native-base": "^3.4.28",
     "openai": "^4.52.0",
     "react": "18.2.0",
@@ -38,7 +41,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
-    
   },
   "private": true
 }
